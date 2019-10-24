@@ -15,46 +15,88 @@
 <body>
     <div class="container-fluid m-0">
         <div class="row justify-content-around">
-            <div class="col-">
-                <button type="button" class="btn btn-primary" id="shoppingBag">Panier</button>
-            </div>
             <div class="col">
-                <div class="input-group mb-3" id="qtGroup">
-                    <div class="input-group-prepend">
-                        <button type="button" class="btn btn-success" id="addQuantity">+</button>
-                    </div>
-                    <input type="text" class="form-control" value="" placeholder="Quantités" id="nbArticle" />
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-danger" id="removeQuantity">-</button>
-                    </div>
-                </div>
+                <button type="button" class="btn btn-primary" id="shoppingBag" data-target="#panier"
+                    data-toggle="modal">Panier</button>
             </div>
+
             <div class="col">
                 <button type="button" class="btn btn-primary" id="addArticle">Ajout Panier</button>
             </div>
-            <div class="col">
-                    <button type="button" class="btn btn-primary" id="removeArticle">Supprimer Panier</button>
-                </div>
+
+
 
 
             <div class="col">
-                    <div class="input-group mb-3" id="qtGroup2">
-                        <div class="input-group-prepend">
-                            <button type="button" class="btn btn-primary" id="addQuantity2">+</button>
-                        </div>
-                        <input type="text" class="form-control" value="" placeholder="Quantités" id="nbArticle2" />
-                        <div class="input-group-append">
-                            <button type="button" class="btn btn-secondary" id="removeQuantity2">-</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-dark" id="addArticle2">Ajout Panier</button>
-                </div>
-                <div class="col">
-                        <button type="button" class="btn btn-dark" id="removeArticle2">Supprimer Panier</button>
-                    </div>
+                <button type="button" class="btn btn-dark" id="addArticle2">Ajout Panier</button>
+            </div>
+
         </div>
+
+
+
+
+
+
+
+
+        <div class="modal" tabindex="-1" role="dialog" id="panier">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                        <div class="col">
+                            <div class="input-group mb-3" id="qtGroup">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-success" id="addQuantity">+</button>
+                                </div>
+                                <input type="text" class="form-control" value="" placeholder="Quantités"
+                                    id="nbArticle" />
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-danger" id="removeQuantity">-</button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-primary" id="removeArticle">Supprimer
+                                    Panier</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3" id="qtGroup2">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary" id="addQuantity2">+</button>
+                                </div>
+                                <input type="text" class="form-control" value="" placeholder="Quantités"
+                                    id="nbArticle2" />
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" id="removeQuantity2">-</button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-dark" id="removeArticle2">Supprimer Panier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Payer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
     </div>
     <!-- script début -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

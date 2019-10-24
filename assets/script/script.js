@@ -1,8 +1,8 @@
 $(function () {
-
-    $("#qtGroup").hide();
-    $("#qtGroup2").hide();
-
+    $(function () {
+        $("#qtGroup").hide();
+        $("#qtGroup2").hide();
+    });
     //////////////////////////////////////////////////Article 1 début////////////////////////////////////////////////////
 
     //+ button début--------------------------------
@@ -32,7 +32,7 @@ $(function () {
     //show / hide Qt début----------------------
     var qtGroup = $("#qtGroup");
     $("#addArticle").click(function () {
-        $("body").prepend(qtGroup);
+        $(".modal-body").prepend(qtGroup);
     });
     $("#removeArticle").click(function () {
         $(qtGroup).remove();
@@ -69,7 +69,7 @@ $(function () {
     //show / hide Qt début----------------------
     var qtGroup2 = $("#qtGroup2");
     $("#addArticle2").click(function () {
-        $("body").prepend(qtGroup2);
+        $(".modal-body").prepend(qtGroup2);
     });
     $("#removeArticle2").click(function () {
         $(qtGroup2).remove();
