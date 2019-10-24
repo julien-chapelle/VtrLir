@@ -24,9 +24,6 @@
                 <button type="button" class="btn btn-primary" id="addArticle">Ajout Panier</button>
             </div>
 
-
-
-
             <div class="col">
                 <button type="button" class="btn btn-dark" id="addArticle2">Ajout Panier</button>
             </div>
@@ -39,57 +36,67 @@
 
 
 
-
+        <!-- Modal début -------------------------------------------------------------------------------------------------->
         <div class="modal" tabindex="-1" role="dialog" id="panier">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
+                        <h5 class="modal-title">Mon Panier</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                        <div class="col">
-                            <div class="input-group mb-3" id="qtGroup">
-                                <div class="input-group-prepend">
-                                    <button type="button" class="btn btn-success" id="addQuantity">+</button>
-                                </div>
-                                <input type="text" class="form-control" value="" placeholder="Quantités"
-                                    id="nbArticle" />
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-danger" id="removeQuantity">-</button>
-                                </div>
+                        <div class="h5">Liste d'achat :</div>
+                        <div id="emptyBasketMessage">Votre panier est vide</div>
+
+                        <!-- select qt début -------------------------------------------------------------------------------------->
+                        <div class="input-group mb-3 col" id="qtGroup">
+                            <div class="input-group-prepend">
+                                <button type="button" class="btn btn-success" id="addQuantity">+</button>
                             </div>
+                            <input type="text" class="form-control" value="" placeholder="Quantités" id="nbArticle" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-danger" id="removeQuantity">-</button>
+                            </div>
+                            <!-- select qt fin ---------------------------------------------------------------------------------------->
+                            <!-- bouton add article début -------------------------------------------------------------------------->
                             <div class="col">
                                 <button type="button" class="btn btn-primary" id="removeArticle">Supprimer
                                     Panier</button>
                             </div>
+                            <!-- bouton add article fin --------------------------------------------------------------------------->
                         </div>
-                        <div class="col">
-                            <div class="input-group mb-3" id="qtGroup2">
-                                <div class="input-group-prepend">
-                                    <button type="button" class="btn btn-primary" id="addQuantity2">+</button>
-                                </div>
-                                <input type="text" class="form-control" value="" placeholder="Quantités"
-                                    id="nbArticle2" />
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-secondary" id="removeQuantity2">-</button>
-                                </div>
+                        <!-- select qt fin -------------------------------------------------------------------------------------->
+
+                        <!-- select qt début ------------------------------------------------------------------------------------->
+                        <div class="input-group mb-3 col" id="qtGroup2">
+                            <div class="input-group-prepend">
+                                <button type="button" class="btn btn-primary" id="addQuantity2">+</button>
                             </div>
+                            <input type="text" class="form-control" value="" placeholder="Quantités" id="nbArticle2" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-secondary" id="removeQuantity2">-</button>
+                            </div>
+                            <!-- select qt fin --------------------------------------------------------------------------------------->
+                            <!-- bouton add article début -------------------------------------------------------------------------------->
                             <div class="col">
                                 <button type="button" class="btn btn-dark" id="removeArticle2">Supprimer Panier</button>
                             </div>
+                            <!-- bouton add article fin ----------------------------------------------------------------------------->
                         </div>
+                        <!-- select qt fin ------------------------------------------------------------------------------------------>
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" id="emptyBasket">Vider panier</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                         <button type="button" class="btn btn-primary">Payer</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Modal fin ------------------------------------------------------------------------------------------------>
 
 
 

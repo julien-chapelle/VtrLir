@@ -31,11 +31,12 @@ $(function () {
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
     var qtGroup = $("#qtGroup");
+
     $("#addArticle").click(function () {
-        $(".modal-body").prepend(qtGroup);
+        $(".modal-body").show(qtGroup);
     });
     $("#removeArticle").click(function () {
-        $(qtGroup).remove();
+        $(qtGroup).hide();
     });
     //show / hide Qt fin----------------------
 
@@ -68,16 +69,28 @@ $(function () {
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
     var qtGroup2 = $("#qtGroup2");
+
     $("#addArticle2").click(function () {
-        $(".modal-body").prepend(qtGroup2);
+        $(".modal-body").show(qtGroup2);
     });
     $("#removeArticle2").click(function () {
-        $(qtGroup2).remove();
+        $(qtGroup2).hide();
     });
     //show / hide Qt fin----------------------
 
     //////////////////////////////////////////////////Article 2 fin////////////////////////////////////////////////////
+    //////////////////////////////////////////////////Message panier vide début////////////////////////////////////////////////////
 
+    $("#addArticle, #addArticle2").click(function () {
+        $("#emptyBasketMessage").hide();
+    });
+    $("#emptyBasket").click(function () {
+        $("#emptyBasketMessage").show();
+        $("#qtGroup").hide();
+        $("#qtGroup2").hide();
+    });
+    
+    //////////////////////////////////////////////////Message panier vide fin////////////////////////////////////////////////////
 
 
 
