@@ -1,4 +1,7 @@
 $(function () {
+    var priceRef0001 = 279.90;
+    var priceRef0002 = 159.90;
+
     $(function () {
         $("#qtGroup").hide();
         $("#qtGroup2").hide();
@@ -6,21 +9,13 @@ $(function () {
     //////////////////////////////////////////////////Article 1 début////////////////////////////////////////////////////
 
     //+ button début--------------------------------
-    var nbArticle = ($("#nbArticle").val());
-    var price1 = parseInt($("#price1").val());
-    var total1 = (nbArticle * price1);
-    console.log($("#nbArticle").val());
-    console.log(parseInt($("#price1").val()))
-    console.log(total1)
-
-
 
     $("#addQuantity").click(function () {
         $("#nbArticle").val(function (i, val) {
             return val * 1 + 1;
         });
         $("#finalPrice1").text(function () {
-            return Math.round((279.90 * $("#nbArticle").val())*100)/100;
+            return Math.round((priceRef0001 * $("#nbArticle").val()) * 100) / 100;
         });
     });
     //+ button fin--------------------------------
@@ -32,7 +27,7 @@ $(function () {
             });
         }
         $("#finalPrice1").text(function () {
-            return Math.round((279.90 * $("#nbArticle").val())*100)/100;
+            return Math.round((priceRef0001 * $("#nbArticle").val()) * 100) / 100;
         });
     });
     //- button fin--------------------------------
@@ -67,7 +62,7 @@ $(function () {
             return val * 1 + 1;
         });
         $("#finalPrice2").text(function () {
-            return Math.round((159.90 * $("#nbArticle2").val())*100)/100;
+            return Math.round((priceRef0002 * $("#nbArticle2").val()) * 100) / 100;
         });
     });
     //+ button fin--------------------------------
@@ -79,7 +74,7 @@ $(function () {
             });
         }
         $("#finalPrice2").text(function () {
-            return Math.round((159.90 * $("#nbArticle2").val())*100)/100;
+            return Math.round((priceRef0002 * $("#nbArticle2").val()) * 100) / 100;
         });
     });
     //- button fin--------------------------------
@@ -115,6 +110,15 @@ $(function () {
     });
 
     //////////////////////////////////////////////////Message panier vide fin////////////////////////////////////////////////////
+    //////////////////////////////////////////////////To pay début////////////////////////////////////////////////////
+
+
+
+
+
+
+
+    //////////////////////////////////////////////////To pay fin////////////////////////////////////////////////////
 
 
 

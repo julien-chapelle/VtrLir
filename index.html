@@ -58,13 +58,14 @@
                             <div class="input-group-prepend">
                                 <button type="button" class="btn btn-light ml-2" id="addQuantity">+</button>
                             </div>
-                            <input type="text" class="wInput" value="" placeholder="Quantités" id="nbArticle" />
+                            <input type="text" class="wInput" value="" placeholder="Qts" id="nbArticle" />
                             <div class="input-group-append">
                                 <button type="button" class="btn btn-light mr-2" id="removeQuantity">-</button>
                             </div>
                             <!-- select qt fin ---------------------------------------------------------------------------------------->
                             <!-- bouton add article début -------------------------------------------------------------------------->
                             <div class="h5 mx-auto" id="finalPrice1"></div>
+                            <div>€</div>
                             <div>
                                 <button type="button" class="btn btn-light ml-2" id="removeArticle">X</button>
                             </div>
@@ -76,24 +77,25 @@
                         <div class="input-group mb-3" id="qtGroup2">
                             <div class="h5 mx-auto">PRODUIT 2</div>
                             <div class="h6 mx-auto">Ref : 0002</div>
-                            <div class="h5 mx-auto"id="price2">159,90€</div>
+                            <div class="h5 mx-auto" id="price2">159,90€</div>
                             <div class="input-group-prepend">
                                 <button type="button" class="btn btn-light ml-2" id="addQuantity2">+</button>
                             </div>
-                            <input type="text" class="wInput" value="" placeholder="Quantités" id="nbArticle2" />
+                            <input type="text" class="wInput" value="" placeholder="Qts" id="nbArticle2" />
                             <div class="input-group-append">
                                 <button type="button" class="btn btn-light mr-2" id="removeQuantity2">-</button>
                             </div>
                             <!-- select qt fin --------------------------------------------------------------------------------------->
                             <!-- bouton add article début -------------------------------------------------------------------------------->
                             <div class="h5 mx-auto" id="finalPrice2"></div>
+                            <div>€</div>
                             <div>
                                 <button type="button" class="btn btn-light ml-2" id="removeArticle2">X</button>
                             </div>
                             <!-- bouton add article fin ----------------------------------------------------------------------------->
                         </div>
                         <!-- select qt fin ------------------------------------------------------------------------------------------>
-                        <div class="col">Total :</div>
+                        <div class="col h3">Total :<span class="col h4" id="toPay">€€€</span></div>
                     </div>
 
                     <div class="modal-footer">
