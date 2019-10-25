@@ -1,6 +1,42 @@
 #home {
-    min-height: 400px;
+    min-height: 380px;
 }
 #categories1 {
-    min-height: 400px;
+    min-height: 380px;
 }
+
+/* Article 1 */
+#addQuantity {
+    height: 30px;
+}
+#removeQuantity {
+    height: 30px;
+}
+#nbArticle {
+    height: 30px;
+}
+/* Article 1 */
+
+/* Article 2 */
+#addQuantity2 {
+    height: 30px;
+}
+#removeQuantity2 {
+    height: 30px;
+}
+#nbArticle2 {
+    height: 30px;
+}
+/* Article 2 */
+
+/* Article 3 */
+#addQuantity3 {
+    height: 30px;
+}
+#removeQuantity3 {
+    height: 30px;
+}
+#nbArticle3 {
+    height: 30px;
+}
+/* Article 3 */
