@@ -1,8 +1,22 @@
 #home {
     min-height: 380px;
 }
+.vtrLogo {
+    width: 15rem;
+}
+.fontBankGothic {
+    font-family: BankGothic Md BT;
+}
+#bodyPics {
+    background: url("../img/bodyPics.jpg"), center 0 no-repeat fixed;
+    background-size: cover;
+}
 #categories1 {
     min-height: 380px;
+}
+.navBarBorder{
+    border-top: 3px solid #016a2d;
+    border-bottom: 3px solid #ed0100;
 }
 
 /* Article 1 */

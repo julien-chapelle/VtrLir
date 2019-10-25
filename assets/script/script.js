@@ -1,25 +1,51 @@
 $(function () {
 
+    //////////////////////////////////////////////////show/hide categorie début////////////////////////////////////////////////////
+
     $('#categories1').hide();
+    $('#categories2').hide();
+    $('#categories3').hide();
+    
     $('.home').click(function () {
         $('#categories1').hide();
+        $('#categories2').hide();
+        $('#categories3').hide();
         $('#home').show();
     });
     $('.categories1').click(function () {
         $('#home').hide();
+        $('#categories2').hide();
+        $('#categories3').hide();
         $('#categories1').show();
     });
+    $('.categories2').click(function () {
+        $('#home').hide();
+        $('#categories1').hide();
+        $('#categories3').hide();
+        $('#categories2').show();
+    });
+    $('.categories3').click(function () {
+        $('#home').hide();
+        $('#categories1').hide();
+        $('#categories2').hide();
+        $('#categories3').show();
+    });
 
+    //////////////////////////////////////////////////show/hide categorie fin////////////////////////////////////////////////////
+   
+    //////////////////////////////////////////////////VAR PRIX début////////////////////////////////////////////////////
 
-    var priceRef0001 = 2100;
-    var priceRef0002 = 3599;
-    var priceRef0003 = 2000;
-    // var priceRef0004 = 2000;
-    // var priceRef0005 = 2000;
-    // var priceRef0006 = 2000;
-    // var priceRef0007 = 2000;
-    // var priceRef0008 = 2000;
-    // var priceRef0009 = 2000;
+    var priceRefwm001 = 2100;
+    var priceRefwb002 = 3599;
+    var priceRefwo003 = 2000;
+    // var priceRefea001 = 2200;
+    // var priceRefer002 = 1500;
+    // var priceRefey003 = 800;
+    // var priceRefcd001 = 1700;
+    // var priceRefct002 = 770;
+    // var priceRefct003 = 200;
+
+    //////////////////////////////////////////////////VAR PRIX fin////////////////////////////////////////////////////
 
     $("#qtGroup").hide();
     $("#qtGroup2").hide();
@@ -31,7 +57,8 @@ $(function () {
     // $('#qtGroup8').hide();
     // $('#qtGroup9').hide();
     $('#notif').hide();
-    //////////////////////////////////////////////////Article 1 début////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////JANTE Article 1 début////////////////////////////////////////////////////
 
     //+ button début--------------------------------
 
@@ -40,7 +67,7 @@ $(function () {
             return val * 1 + 1;
         });
         $("#finalPrice1").text(function () {
-            return Math.round((priceRef0001 * $("#nbArticle").val()) * 100) / 100;
+            return Math.round((priceRefwm001 * $("#nbArticle").val()) * 100) / 100;
         });
     });
     //+ button fin--------------------------------
@@ -52,7 +79,7 @@ $(function () {
             });
         }
         $("#finalPrice1").text(function () {
-            return Math.round((priceRef0001 * $("#nbArticle").val()) * 100) / 100;
+            return Math.round((priceRefwm001 * $("#nbArticle").val()) * 100) / 100;
         });
     });
     //- button fin--------------------------------
@@ -61,7 +88,7 @@ $(function () {
     $("#addArticle").click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
         $("#qtGroup").show();
-        $('#finalPrice1').text(priceRef0001);
+        $('#finalPrice1').text(priceRefwm001);
         $('hr').show();
     });
     //panier +1 button fin----------------------
@@ -73,17 +100,17 @@ $(function () {
     $("#removeArticle").click(function () {
         $(qtGroup).hide();
         $('#nbArticle').val('1');
-        $('#finalPrice1').text(priceRef0001);
+        $('#finalPrice1').text(priceRefwm001);
     });
     $('#nbArticle').focusout(function () {
         $("#finalPrice1").text(function () {
-            return Math.round((priceRef0001 * $("#nbArticle").val()) * 100) / 100;
+            return Math.round((priceRefwm001 * $("#nbArticle").val()) * 100) / 100;
         });
     });
     //show / hide Qt fin----------------------
 
-    //////////////////////////////////////////////////Article 1 fin////////////////////////////////////////////////////
-    //////////////////////////////////////////////////Article 2 début////////////////////////////////////////////////////
+    //////////////////////////////////////////////////JANTE Article 1 fin////////////////////////////////////////////////////
+    //////////////////////////////////////////////////JANTE Article 2 début////////////////////////////////////////////////////
 
     //+ button début--------------------------------
 
@@ -92,7 +119,7 @@ $(function () {
             return val * 1 + 1;
         });
         $("#finalPrice2").text(function () {
-            return Math.round((priceRef0002 * $("#nbArticle2").val()) * 100) / 100;
+            return Math.round((priceRefwb002 * $("#nbArticle2").val()) * 100) / 100;
         });
     });
     //+ button fin--------------------------------
@@ -104,7 +131,7 @@ $(function () {
             });
         }
         $("#finalPrice2").text(function () {
-            return Math.round((priceRef0002 * $("#nbArticle2").val()) * 100) / 100;
+            return Math.round((priceRefwb002 * $("#nbArticle2").val()) * 100) / 100;
         });
     });
     //- button fin--------------------------------
@@ -113,7 +140,7 @@ $(function () {
     $("#addArticle2").click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
         $("#qtGroup2").show();
-        $('#finalPrice2').text(priceRef0002);
+        $('#finalPrice2').text(priceRefwb002);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -124,18 +151,18 @@ $(function () {
     $("#removeArticle2").click(function () {
         $(qtGroup2).hide();
         $('#nbArticle2').val('1');
-        $('#finalPrice2').text(priceRef0002);
+        $('#finalPrice2').text(priceRefwb002);
     });
     $('#nbArticle2').focusout(function () {
         $("#finalPrice2").text(function () {
-            return Math.round((priceRef0002 * $("#nbArticle2").val()) * 100) / 100;
+            return Math.round((priceRefwb002 * $("#nbArticle2").val()) * 100) / 100;
         });
     });
     //show / hide Qt fin----------------------
 
-    //////////////////////////////////////////////////Article 2 fin////////////////////////////////////////////////////
-    //////////////////////////////////////////////////Article 3 début////////////////////////////////////////////////////
-    
+    //////////////////////////////////////////////////JANTE Article 2 fin////////////////////////////////////////////////////
+    //////////////////////////////////////////////////JANTE Article 3 début////////////////////////////////////////////////////
+
     //+ button début--------------------------------
 
     $("#addQuantity3").click(function () {
@@ -143,7 +170,7 @@ $(function () {
             return val * 1 + 1;
         });
         $("#finalPrice3").text(function () {
-            return Math.round((priceRef0003 * $("#nbArticle3").val()) * 100) / 100;
+            return Math.round((priceRefwo003 * $("#nbArticle3").val()) * 100) / 100;
         });
     });
     //+ button fin--------------------------------
@@ -155,7 +182,7 @@ $(function () {
             });
         }
         $("#finalPrice3").text(function () {
-            return Math.round((priceRef0003 * $("#nbArticle3").val()) * 100) / 100;
+            return Math.round((priceRefwo003 * $("#nbArticle3").val()) * 100) / 100;
         });
     });
     //- button fin--------------------------------
@@ -164,7 +191,7 @@ $(function () {
     $("#addArticle3").click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
         $("#qtGroup3").show();
-        $('#finalPrice3').text(priceRef0003);
+        $('#finalPrice3').text(priceRefwo003);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -175,20 +202,19 @@ $(function () {
     $("#removeArticle3").click(function () {
         $(qtGroup3).hide();
         $('#nbArticle3').val('1');
-        $('#finalPrice3').text(priceRef0003);
+        $('#finalPrice3').text(priceRefwo003);
     });
     $('#nbArticle3').focusout(function () {
         $("#finalPrice3").text(function () {
-            return Math.round((priceRef0003 * $("#nbArticle3").val()) * 100) / 100;
+            return Math.round((priceRefwo003 * $("#nbArticle3").val()) * 100) / 100;
         });
     });
     //show / hide Qt fin----------------------
 
-    //////////////////////////////////////////////////Article 3 fin////////////////////////////////////////////////////
-    //////////////////////////////////////////////////Message panier vide début////////////////////////////////////////////////////
+    //////////////////////////////////////////////////JANTE Article 3 fin////////////////////////////////////////////////////
+    //////////////////////////////////////////////////remise a 1 début////////////////////////////////////////////////////
 
     $("#emptyBasket").click(function () {
-        $("#emptyBasketMessage").show();
         $("#qtGroup").hide();
         $('#nbArticle').val('1');
         $("#qtGroup2").hide();
@@ -209,7 +235,7 @@ $(function () {
         // $('#nbArticle9').val('1');
     });
 
-    //////////////////////////////////////////////////Message panier vide fin////////////////////////////////////////////////////
+    //////////////////////////////////////////////////remise a 1 fin////////////////////////////////////////////////////
     //////////////////////////////////////////////////To pay début////////////////////////////////////////////////////
 
 

@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body>
+<body class="fontBankGothic" id="bodyPics">
     <!--Navbar -->
-    <nav class="mb-1 navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="mb-1 navbar navbar-expand-sm navbar-dark bg-dark sticky-top navBarBorder">
+        <a class="navbar-brand" href="#"><img src="assets/img/VtrLogo.png" title="vtrLogo" class="vtrLogo" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
             aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,13 +31,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link categories1" href="#">Catégorie 1</a>
+                    <a class="nav-link categories1" href="#">Jantes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link categories2" href="#">Catégorie 2</a>
+                    <a class="nav-link categories2" href="#">Echappement</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link categories3" href="#">Catégorie 3</a>
+                    <a class="nav-link categories3" href="#">Carénages</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -50,7 +50,17 @@
         </div>
     </nav>
     <!--Navbar -->
-    <!-- Modal Accueil -->
+    <!-- Accueil DEBUT -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container-fluid">
+                <div class="col-12 my-5 border border-dark" id="home">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Accueil FIN -->
+    <!-- Modal Panier -->
     <div class="modal fade" id="panier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -67,11 +77,12 @@
                                 <h5 class="text-center">Article :</h5>
                             </div>
                         </div>
+                        <!-- Article WM001 PANIER DEBUT -->
                         <div id="qtGroup">
                             <div class="row justify-content-around border">
                                 <div class="col-auto">
                                     <div class="row">
-                                        <div class="h6">PRODUIT 1</div>
+                                        <div class="h6">Marchesini M10RS</div>
                                     </div>
                                     <div class="row">
                                         <div class="h6">Ref : WM001</div>
@@ -97,11 +108,13 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Article WM001 PANIER FIN -->
+                        <!-- Article WB002 PANIER DEBUT -->
                         <div id="qtGroup2">
                             <div class="row justify-content-around border my-2">
                                 <div class="col-auto">
                                     <div class="row">
-                                        <div class="h6 align-middle">PRODUIT 2</div>
+                                        <div class="h6 align-middle">BST Black Diamond</div>
                                     </div>
                                     <div class="row">
                                         <div class="h6">Ref : WB002</div>
@@ -127,11 +140,13 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Article WB002 PANIER FIN -->
+                        <!-- Article WO003 PANIER DEBUT -->
                         <div id="qtGroup3">
                             <div class="row justify-content-around border my-2">
                                 <div class="col-auto">
                                     <div class="row">
-                                        <div class="h6">PRODUIT 3</div>
+                                        <div class="h6 align-middle">OZ Piega</div>
                                     </div>
                                     <div class="row">
                                         <div class="h6">Ref : WO003</div>
@@ -140,7 +155,7 @@
                                         <div class="h6">2000€</div>
                                     </div>
                                 </div>
-                                <div class="input-group col-4">
+                                <div class="input-group col-4 my-auto">
                                     <div class="input-group-prepend">
                                         <span type="button" class="input-group-text" id="addQuantity3">+</span>
                                     </div>
@@ -149,7 +164,7 @@
                                         <span type="button" class="input-group-text" id="removeQuantity3">-</span>
                                     </div>
                                 </div>
-                                <div class="h5 w-20" id="finalPrice3"></div>
+                                <div class="h5 w-20 my-auto" id="finalPrice3"></div>
                                 <span>€</span>
                                 <div>
                                     <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
@@ -157,6 +172,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Article WO003 PANIER FIN -->
                     </div>
                 </div>
                 <div class="modal-footer d-flex">
@@ -164,20 +180,24 @@
                         <div class="col-12 text-center d-inline-block mx-3">
                             <p class="border">Total : xxx€</p>
                         </div>
-                        <button class="btn btn-dark btn-sm">Procéder au paiement</button>
-                        <button class="btn btn-dark btn-sm" id="emptyBasket">Vider le panier</button>
+                        <button class="btn btn-outline-danger btn-sm">Procéder au paiement</button>
+                        <button class="btn btn-outline-success btn-sm" id="emptyBasket">Vider le panier</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Fin de la modal Accueil -->
-    <!-- Notifications -->
-    <div class="alert alert-success text-center" role="alert" id="notif">Votre article à bien été ajouté au panier</div>
-    <!-- /Notifications -->
+    <!-- Fin de la modal panier -->
+
+
+    <!-- Notifications DEBUT -->
+    <div class="alert alert-success text-left" role="alert" id="notif">Votre article à bien été ajouté au panier</div>
+    <!-- Notifications FIN -->
+
+
+    <!-- Catégories JANTE DEBUT -->
     <div class="container-fluid">
         <div class="row">
-            <!-- Catégories 1 -->
             <div class="container-fluid">
                 <div class="col-12 my-5 border border-dark" id="categories1">
                     <div class="row justify-content-around">
@@ -185,19 +205,20 @@
                             <!-- Card -->
                             <div class="card my-2">
                                 <!-- Card image -->
-                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
-                                    alt="Card image cap">
+                                <img class="card-img-top" src="assets/img/marchesiniM10rs.jpg" alt="Card image cap">
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h4 class="card-title"><a>Article 1</a></h4>
+                                    <h4 class="card-title"><a>Marchesini M10RS</a></h4>
                                     <!-- Text -->
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk of the card's content.</p>
+                                    <p class="card-text">Jantes en aluminium forgées Kompe.</br>
+                                        Pour HONDA VTR 1000 SP1 / SP2 2000> 2006</p></br>
+                                    <p class="h5">2100€</p>
                                     <!-- Button -->
-                                    <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#panier"
-                                        id="addArticle">Ajouter au Panier</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                        data-target="#panier" id="addArticle">Ajouter au Panier</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                        data-target="#techWm001" title="Détails"><i class="fas fa-cogs"></i></a>
                                 </div>
                             </div>
                             <!-- Card -->
@@ -206,19 +227,20 @@
                             <!-- Card -->
                             <div class="card my-2">
                                 <!-- Card image -->
-                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
-                                    alt="Card image cap">
+                                <img class="card-img-top" src="assets/img/Bst.jpg" alt="Card image cap">
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h4 class="card-title"><a>Article 2</a></h4>
+                                    <h4 class="card-title"><a>BST Black Diamond</a></h4>
                                     <!-- Text -->
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk of the card's content.</p>
+                                    <p class="card-text">Jantes en fibre de carbone.</br>
+                                        Pour Honda VTR 1000 SP1 / SP2 2000> 2005</p></br>
+                                    <p class="h5">3599€</p>
                                     <!-- Button -->
-                                    <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#panier"
-                                        id="addArticle2">Ajouter au Panier</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                        data-target="#panier" id="addArticle2">Ajouter au Panier</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                        data-target="#techWb002" title="Détails"><i class="fas fa-cogs"></i></a>
                                 </div>
                             </div>
                             <!-- Card -->
@@ -227,19 +249,20 @@
                             <!-- Card -->
                             <div class="card my-2">
                                 <!-- Card image -->
-                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
-                                    alt="Card image cap">
+                                <img class="card-img-top" src="assets/img/ozPiega.jpg" alt="Card image cap">
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h4 class="card-title"><a>Article 3</a></h4>
+                                    <h4 class="card-title"><a>OZ Piega</a></h4>
                                     <!-- Text -->
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk of the card's content.</p>
+                                    <p class="card-text">Jantes en aluminium forgées.</br>
+                                        Pour HONDA VTR 1000 SP1 / SP2 2000> 2006</p></br>
+                                    <p class="h5">2000€</p>
                                     <!-- Button -->
-                                    <a type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                    <a type="button" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                         data-target="#panier" id="addArticle3">Ajouter au Panier</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                        data-target="#techWo003" title="Détails"><i class="fas fa-cogs"></i></a>
                                 </div>
                             </div>
                             <!-- Card -->
@@ -247,17 +270,224 @@
                     </div>
                 </div>
             </div>
-            <!-- Catégories 1 -->
-        </div>
-        <div class="row">
-            <!-- Accueil -->
-            <div class="container-fluid">
-                <div class="col-12 my-5 border border-dark" id="home">
-                </div>
-            </div>
-            <!-- Accueil -->
+
         </div>
     </div>
+    <!-- Catégories JANTE FIN -->
+
+
+    <!-- Catégories ECHAPPEMENT DEBUT -->
+    <div class="container-fluid">
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="col-12 my-5 border border-dark" id="categories2">
+                        <div class="row justify-content-around">
+                            <div class="col-12 col-md-3 mx-auto">
+                                <!-- Card -->
+                                <div class="card my-2">
+                                    <!-- Card image -->
+                                    <img class="card-img-top" src="assets/img/akrapovicCarbon.jpg" alt="Card image cap">
+                                    <!-- Card content -->
+                                    <div class="card-body">
+                                        <!-- Title -->
+                                        <h4 class="card-title"><a>Marchesini M10RS</a></h4>
+                                        <!-- Text -->
+                                        <p class="card-text">Jantes en aluminium forgées Kompe.</br>
+                                            Pour HONDA VTR 1000 SP1 / SP2 2000> 2006</p></br>
+                                        <p class="h5">2100€</p>
+                                        <!-- Button -->
+                                        <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                            data-target="#panier" id="addArticle">Ajouter au Panier</a>
+                                        <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                            data-target="#techEa001" title="Détails"><i class="fas fa-cogs"></i></a>
+                                    </div>
+                                </div>
+                                <!-- Card -->
+                            </div>
+                            <div class="col-12 col-md-3 mx-auto">
+                                <!-- Card -->
+                                <div class="card my-2">
+                                    <!-- Card image -->
+                                    <img class="card-img-top" src="assets/img/RpCarbon.jpg" alt="Card image cap">
+                                    <!-- Card content -->
+                                    <div class="card-body">
+                                        <!-- Title -->
+                                        <h4 class="card-title"><a>BST Black Diamond</a></h4>
+                                        <!-- Text -->
+                                        <p class="card-text">Jantes en fibre de carbone.</br>
+                                            Pour Honda VTR 1000 SP1 / SP2 2000> 2005</p></br>
+                                        <p class="h5">3599€</p>
+                                        <!-- Button -->
+                                        <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                            data-target="#panier" id="addArticle2">Ajouter au Panier</a>
+                                        <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                            data-target="#techEr002" title="Détails"><i class="fas fa-cogs"></i></a>
+                                    </div>
+                                </div>
+                                <!-- Card -->
+                            </div>
+                            <div class="col-12 col-md-3 mx-auto">
+                                <!-- Card -->
+                                <div class="card my-2">
+                                    <!-- Card image -->
+                                    <img class="card-img-top" src="assets/img/yoshimuraRs3.png" alt="Card image cap">
+                                    <!-- Card content -->
+                                    <div class="card-body">
+                                        <!-- Title -->
+                                        <h4 class="card-title"><a>OZ Piega</a></h4>
+                                        <!-- Text -->
+                                        <p class="card-text">Jantes en aluminium forgées.</br>
+                                            Pour HONDA VTR 1000 SP1 / SP2 2000> 2006</p></br>
+                                        <p class="h5">2000€</p>
+                                        <!-- Button -->
+                                        <a type="button" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                            data-target="#panier" id="addArticle3">Ajouter au Panier</a>
+                                        <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
+                                            data-target="#techEy003" title="Détails"><i class="fas fa-cogs"></i></a>
+                                    </div>
+                                </div>
+                                <!-- Card -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <!-- Catégories ECHAPPEMENT FIN -->
+
+
+    <!-- Modal detail tech WM001 -->
+    <div class="modal fade" id="techWm001" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="modal-title text-center w-100 font-weight-bold justify-content-center">
+                        Caractéristiques techniques</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="container-fluid">
+                    </div>
+                    <div>
+                        <div class="row justify-content-around border">
+                            <div class="col-auto">
+                                <div class="row justify-content-center">
+                                    <div class="h5">Gain de poid : 0.6kg AV - 0.8Kg AR</div>
+                                </div>
+                                <div class="row">
+                                    <div class="h6">
+                                        <ul>
+                                            <li>Matériau - Aluminium multiforgé</li>
+                                            <li>Dimension avant - 17 "x3,50"</li>
+                                            <li> Dimension arrière - 17 "x6"</li>
+                                            <li>Traitement antidérapant avant / arrière - en option sur demande
+                                            </li>
+                                            <li>Type de vanne avant / arrière - V90 / V</li>
+                                            <li>Type de caoutchouc de pignon (Qté) - 4181 (x5)</li>
+                                            <li>Couleurs - Noir brillant, Noir mat, Or</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal detail tech WM001 -->
+    <!-- Modal detail tech WB002 -->
+    <div class="modal fade" id="techWb002" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="modal-title text-center w-100 font-weight-bold justify-content-center">
+                        Caractéristiques techniques</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="container-fluid">
+                    </div>
+                    <div>
+                        <div class="row justify-content-around border">
+                            <div class="col-auto">
+                                <div class="row justify-content-center">
+                                    <div class="h5">Gain de poid : 0.8kg AV - 1Kg AR</div>
+                                </div>
+                                <div class="row">
+                                    <div class="h6">
+                                        <ul>
+                                            <li>Matériau - fibre de carbone monocoque</li>
+                                            <li>Dimension avant - 17 "x3,50"</li>
+                                            <li>Dimension arrière - 17 "x6,25"</li>
+                                            <li>Roulements céramiques en option</li>
+                                            <li>Type de vanne avant / arrière - V90 / V</li>
+                                            <li>Couleurs - Vernis brillant, mat, satiné</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal detail tech WB002 -->
+    <!-- Modal detail tech WO003 -->
+    <div class="modal fade" id="techWo003" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="modal-title text-center w-100 font-weight-bold justify-content-center">
+                        Caractéristiques techniques</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="container-fluid">
+                    </div>
+                    <div>
+                        <div class="row justify-content-around border">
+                            <div class="col-auto">
+                                <div class="row justify-content-center">
+                                    <div class="h5">Gain de poid : 0.5kg AV - 0.7Kg AR</div>
+                                </div>
+                                <div class="row">
+                                    <div class="h6">
+                                        <ul>
+                                            <li>Matériau - Aluminium multiforgé</li>
+                                            <li>Dimension avant - 17 "x3,50"</li>
+                                            <li>Dimension arrière - 17 "x6"</li>
+                                            <li>Traitement antidérapant avant / arrière - en option sur demande</li>
+                                            <li>Type de vanne avant / arrière - V90 / V</li>
+                                            <li>Type de caoutchouc de pignon (Qté) - 4181 (x5)</li>
+                                            <li>Couleurs - Noir brillant, Noir mat, Or</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal detail tech WO003 -->
+
+
+
+
+
     <!-- script début -->
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
