@@ -1,56 +1,194 @@
 #home {
     min-height: 380px;
 }
+
 .vtrLogo {
     width: 15rem;
 }
+
 .fontBankGothic {
     font-family: BankGothic Md BT;
 }
+
 #bodyPics {
     background: url("../img/bodyPics.jpg"), center 0 no-repeat fixed;
     background-size: cover;
 }
+
 #categories1 {
     min-height: 380px;
 }
-.navBarBorder{
+
+#categories2 {
+    min-height: 380px;
+}
+
+#categories3 {
+    min-height: 380px;
+}
+
+.navBarBorder {
     border-top: 3px solid #016a2d;
     border-bottom: 3px solid #ed0100;
+}
+
+/* Width title basket */
+.wTitleBasket {
+    width: 8rem;
 }
 
 /* Article 1 */
 #addQuantity {
     height: 30px;
 }
+
 #removeQuantity {
     height: 30px;
 }
+
 #nbArticle {
-    height: 30px;
+    height: 30px
 }
+
 /* Article 1 */
 
 /* Article 2 */
 #addQuantity2 {
     height: 30px;
 }
+
 #removeQuantity2 {
     height: 30px;
 }
+
 #nbArticle2 {
     height: 30px;
 }
+
 /* Article 2 */
 
 /* Article 3 */
 #addQuantity3 {
     height: 30px;
 }
+
 #removeQuantity3 {
     height: 30px;
 }
+
 #nbArticle3 {
     height: 30px;
 }
+
 /* Article 3 */
+
+/* Article 4 */
+#addQuantity4 {
+    height: 30px;
+}
+
+#removeQuantity4 {
+    height: 30px;
+}
+
+#nbArticle4 {
+    height: 30px;
+}
+
+/* Article 4 */
+
+/* Article 5 */
+#addQuantity5 {
+    height: 30px;
+}
+
+#removeQuantity5 {
+    height: 30px;
+}
+
+#nbArticle5 {
+    height: 30px;
+}
+
+/* Article 5 */
+
+/* Article 6 */
+#addQuantity6 {
+    height: 30px;
+}
+
+#removeQuantity6 {
+    height: 30px;
+}
+
+#nbArticle6 {
+    height: 30px;
+}
+
+/* Article 6 */
+
+/* Article 7 */
+#addQuantity7 {
+    height: 30px;
+}
+
+#removeQuantity7 {
+    height: 30px;
+}
+
+#nbArticle7 {
+    height: 30px;
+}
+
+/* Article 7 */
+
+/* Article 8 */
+#addQuantity8 {
+    height: 30px;
+}
+
+#removeQuantity8 {
+    height: 30px;
+}
+
+#nbArticle8 {
+    height: 30px;
+}
+
+/* Article 8 */
+
+/* Article 9 */
+#addQuantity9 {
+    height: 30px;
+}
+
+#removeQuantity9 {
+    height: 30px;
+}
+
+#nbArticle9 {
+    height: 30px;
+}
+
+/* Article 9 */
+
+/* scrollUp button */
+#scrollUp {
+    position: fixed;
+    bottom: 5px;
+    right: -100px;
+    font-size: 50px;
+}
+
+.scrollUpColor {
+    color: #016a2d;
+}
+
+/* scrollUp button */
+
+/* size reference basket */
+.sizeRef {
+    font-size: 12px;
+}
+
+/* size reference basket */

@@ -79,6 +79,7 @@ Gain de poid : 8kg env.
     Matériau - Silencieux et extrémité carbones - tubulure inox
     Finition brillant
     Db killer amovibles fournis
+    Position origine
 
 -------------------------------------------------------------------------------
 
@@ -94,6 +95,7 @@ Gain de poid : 6kg env.
     Matériau - Silencieux carbones - tubulure et extrémité inox
     Finition satiné
     Db killer amovibles fournis
+    Position haute
 
 -------------------------------------------------------------------------------
 
@@ -109,6 +111,7 @@ Gain de poid : 2kg env.
     Matériau - Silencieux, tubulure et extrémité inox
     Finition brillant
     Db killer amovibles fournis
+    Position origine
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
