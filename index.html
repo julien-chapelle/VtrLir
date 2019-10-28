@@ -59,14 +59,98 @@
         <!--Navbar -->
         <!-- Accueil DEBUT -->
         <div class="container-fluid">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="col-12 my-5 border border-dark" id="home">
+            <div class="row justify-content-center">
+                <div class="col-10 my-5" id="home">
+                    <div id="partsZone" class="img-fluid">
+                        <img src="assets/img/selectParts.png" title="VtrPicsParts" id="vtrPicsParts"
+                            class="vtrPicsParts img-fluid" />
+                        <img src="assets/img/selectPartsCarenage.png" title="VtrPicsPartsCarenage" id="carenageParts"
+                            class=" img-fluid" />
+                        <img src="assets/img/selectPartsWheel.png" title="VtrPicsPartsWheel" id="wheelParts"
+                            class=" img-fluid" />
+                        <img src="assets/img/selectPartsExhaust.png" title="VtrPicsPartsExhaust" id="exhaustParts"
+                            class=" img-fluid" />
+
+                        <div id="targetWheelPosition">
+                            <span id="targetWheel"><i class="far fa-dot-circle"></i></span>
+                        </div>
+                        <div id="targetCarenagePosition">
+                            <div id="targetCarenage"><i class="far fa-dot-circle"></i></div>
+                        </div>
+                        <div id="targetExhaustPosition">
+                            <div id="targetExhaust"><i class="far fa-dot-circle"></i></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p id="accueilText" class="h5 font-weight-bold">VTR L.I.R :</br>
+                            <span class="h6">Les Honda VTR SP1 & SP2 sont devenues de véritables collectors. Les
+                                versions
+                                compétitions
+                                ont largement démontrées de quoi était capable la VTR. Cependant elles peinent
+                                aujourd'hui à
+                                rester efficaces face aux nouvelles hypersportives puissantes et ultra légères. C'est
+                                pourquoi, <span class="font-weight-bold">chez VTR L.I.R</span>, nous vous proposons une
+                                gamme de pièces permettant de faire
+                                revenir aux avant-postes ces superbes machines.</span></p>
+                        <P id="carenageText" class="h5">CARENAGE :</br>
+                            <span class="h6">On peut changer l'habillage d'origine par un adaptable plus léger.
+                                Il existe beaucoup de fournisseurs. Les matériaux employés font varier le prix, le
+                                poids
+                                et
+                                la
+                                résistance. L'ensemble le moins cher est constitué de fibre de verre et de résine
+                                polyester.
+                                Il
+                                n'est pas très léger, peu résistant à l'abrasion mais se répare facilement.
+                                Le top, c'est un mixte de fibres
+                                carbone
+                                et
+                                kevlar
+                                (pour la légèreté et la résistance à l'abrasion) avec une résine époxy (beaucoup
+                                plus
+                                légère).</span></P>
+                        <P id="wheelText" class="h5 font-weight-bold">JANTE :</br>
+                            <span class="h6">Le gain est plus important par la
+                                diminution de
+                                masse
+                                non-suspendue que par le gain de poids dans l'absolu. Il existe aussi beaucoup de
+                                fournisseurs
+                                de roues. Un certain nombre de séries de roues magnésium ont été livrées avec des
+                                défauts
+                                (des
+                                criques) par le passé, il vaut donc mieux s'assurer de la qualité du fournisseur en
+                                demandant
+                                plusieurs avis. Les roues magnésium ont une durée de vie de 2 ans en moyenne,
+                                au-delà,
+                                le
+                                métal
+                                vieillissant, cela devient risqué. Des porosités et des fissures peuvent en effet
+                                apparaître.</span></P>
+                        <P id="exhaustText" class="h5 font-weight-bold">ECHAPPEMENT :</br>
+                            <span class="h6">Il est très rare de trouver des silencieux plus performants
+                                que
+                                l'origine.
+                                Hélas,
+                                ceux-ci sont en général très lourds.
+                                Veillez donc à choisir un silencieux testé dans un comparatif pour associer votre
+                                gain
+                                de
+                                poids
+                                à une conservation des performances. Un
+                                changement de l'échappement complet permet de gagner beaucoup de poids. Là encore,
+                                il ne
+                                faut
+                                pas
+                                choisir un modèle beaucoup plus important en diamètre de tube sans l'adapter à
+                                l'admission
+                                et
+                                aux diagrammes d'arbre à cames.</span></P>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Accueil FIN -->
+
         <!-- Modal Panier -->
         <div class="modal fade right" id="panier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
@@ -1006,11 +1090,7 @@
             </div>
         </div>
         <!-- Modal detail tech CT003 -->
-        <!-- Scrollup début -->
-        <div id="scrollUp">
-            <a href="#top" class="scrollUpColor"><i class="far fa-caret-square-up"></i></i></a>
-        </div>
-        <!-- Scrollup fin -->
+        <!-- FOOTER -->
         <footer class="page-footer bg-dark footerBorder">
             <div class="container-fluid">
                 <div class="row">
@@ -1023,11 +1103,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="flex-center h5 my-auto">
-                                    <a><i class="fab fa-facebook-f mx-3"></i></a>
-                                    <a><i class="fab fa-twitter mx-3"></i></a>
-                                    <a><i class="fab fa-instagram mx-3"></i></a>
-                                    <a><i class="fab fa-google-plus-g mx-3"></i></a>
-                                    <a><i class="fab fa-pinterest-p mx-3"></i></a>
+                                    <a href="https://fr-fr.facebook.com/" target="_blank" title="facebook"><i class="fab fa-facebook-f mx-3"></i></a>
+                                    <a href="https://twitter.com/?lang=fr" target="_blank" title="twitter"><i class="fab fa-twitter mx-3"></i></a>
+                                    <a href="https://www.instagram.com/?hl=fr" target="_blank" title="instagram"><i class="fab fa-instagram mx-3"></i></a>
+                                    <a href="https://www.pinterest.fr//" target="_blank" title="pinterest"><i class="fab fa-pinterest-p mx-3"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1073,6 +1152,13 @@
             </div>
         </footer>
     </div>
+    <!-- FOOTER -->
+    <!-- Scrollup début -->
+    <div id="scrollUp">
+        <a href="#top" class="scrollUpColor"><i class="far fa-caret-square-up"></i></i></a>
+    </div>
+    <!-- Scrollup fin -->
+
     <!-- script début -->
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -1086,6 +1172,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js">
     </script>
     <script src="assets/script/script.js"></script>
+    <script src="assets/script/selectParts.js"></script>
     <!-- ToTop Button script -->
     <script src="assets/script/to-top.js"></script>
     <!-- script fin -->
