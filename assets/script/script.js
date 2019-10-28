@@ -10,25 +10,25 @@ $(function () {
         $('#categories1').hide();
         $('#categories2').hide();
         $('#categories3').hide();
-        $('#home').show();
+        $('#home').fadeIn(500);
     });
     $('.categories1').click(function () {
         $('#home').hide();
         $('#categories2').hide();
         $('#categories3').hide();
-        $('#categories1').show();
+        $('#categories1').fadeIn(500);
     });
     $('.categories2').click(function () {
         $('#home').hide();
         $('#categories1').hide();
         $('#categories3').hide();
-        $('#categories2').show();
+        $('#categories2').fadeIn(500);
     });
     $('.categories3').click(function () {
         $('#home').hide();
         $('#categories1').hide();
         $('#categories2').hide();
-        $('#categories3').show();
+        $('#categories3').fadeIn(500);
     });
 
     //////////////////////////////////////////////////show/hide categorie fin////////////////////////////////////////////////////
@@ -44,9 +44,9 @@ $(function () {
     var priceRefcd001 = 1700;
     var priceRefct002 = 770;
     var priceRefct003 = 200;
+    var totalCaddy = 0;
 
     //////////////////////////////////////////////////VAR PRIX fin////////////////////////////////////////////////////
-
     $('#qtGroup').hide();
     $('#qtGroup2').hide();
     $('#qtGroup3').hide();
@@ -57,7 +57,15 @@ $(function () {
     $('#qtGroup8').hide();
     $('#qtGroup9').hide();
     $('#notif').hide();
-
+    $('#nbArticle').val('0');
+    $('#nbArticle2').val('0');
+    $('#nbArticle3').val('0');
+    $('#nbArticle4').val('0');
+    $('#nbArticle5').val('0');
+    $('#nbArticle6').val('0');
+    $('#nbArticle7').val('0');
+    $('#nbArticle8').val('0');
+    $('#nbArticle9').val('0');
     //////////////////////////////////////////////////JANTE Article 1 début////////////////////////////////////////////////////
 
     //+ button début--------------------------------
@@ -69,6 +77,7 @@ $(function () {
         $('#finalPrice1').text(function () {
             return Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -81,15 +90,18 @@ $(function () {
         $('#finalPrice1').text(function () {
             return Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle').val('1');
         $('#qtGroup').show();
         $('#finalPrice1').text(priceRefwm001);
-        $('hr').show();
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -99,13 +111,16 @@ $(function () {
     });
     $('#removeArticle').click(function () {
         $(qtGroup).hide();
-        $('#nbArticle').val('1');
+        $('#nbArticle').val('0');
         $('#finalPrice1').text(priceRefwm001);
+        $('#totalCaddy').text(totalCaddy -= 1);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     $('#nbArticle').focusout(function () {
         $('#finalPrice1').text(function () {
             return Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -121,6 +136,7 @@ $(function () {
         $('#finalPrice2').text(function () {
             return Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -133,14 +149,18 @@ $(function () {
         $('#finalPrice2').text(function () {
             return Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle2').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle2').val('1');
         $('#qtGroup2').show();
         $('#finalPrice2').text(priceRefwb002);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -150,13 +170,16 @@ $(function () {
     });
     $('#removeArticle2').click(function () {
         $(qtGroup2).hide();
-        $('#nbArticle2').val('1');
+        $('#nbArticle2').val('0');
         $('#finalPrice2').text(priceRefwb002);
+        $('#totalCaddy').text(totalCaddy -= 1);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     $('#nbArticle2').focusout(function () {
         $('#finalPrice2').text(function () {
             return Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -172,6 +195,7 @@ $(function () {
         $('#finalPrice3').text(function () {
             return Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -184,14 +208,18 @@ $(function () {
         $('#finalPrice3').text(function () {
             return Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle3').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle3').val('1');
         $('#qtGroup3').show();
         $('#finalPrice3').text(priceRefwo003);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -201,13 +229,16 @@ $(function () {
     });
     $('#removeArticle3').click(function () {
         $(qtGroup3).hide();
-        $('#nbArticle3').val('1');
+        $('#nbArticle3').val('0');
         $('#finalPrice3').text(priceRefwo003);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle3').focusout(function () {
         $('#finalPrice3').text(function () {
             return Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -223,6 +254,7 @@ $(function () {
         $('#finalPrice4').text(function () {
             return Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -235,15 +267,18 @@ $(function () {
         $('#finalPrice4').text(function () {
             return Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle4').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle4').val('1');
         $('#qtGroup4').show();
         $('#finalPrice4').text(priceRefea001);
-        $('hr').show();
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -253,13 +288,16 @@ $(function () {
     });
     $('#removeArticle4').click(function () {
         $(qtGroup4).hide();
-        $('#nbArticle4').val('1');
+        $('#nbArticle4').val('0');
         $('#finalPrice4').text(priceRefea001);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle4').focusout(function () {
         $('#finalPrice4').text(function () {
             return Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -275,6 +313,7 @@ $(function () {
         $('#finalPrice5').text(function () {
             return Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -287,14 +326,18 @@ $(function () {
         $('#finalPrice5').text(function () {
             return Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle5').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle5').val('1');
         $('#qtGroup5').show();
         $('#finalPrice5').text(priceRefer002);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -304,13 +347,16 @@ $(function () {
     });
     $('#removeArticle5').click(function () {
         $(qtGroup5).hide();
-        $('#nbArticle5').val('1');
+        $('#nbArticle5').val('0');
         $('#finalPrice5').text(priceRefer002);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle5').focusout(function () {
         $('#finalPrice5').text(function () {
             return Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -326,6 +372,7 @@ $(function () {
         $('#finalPrice6').text(function () {
             return Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -338,14 +385,18 @@ $(function () {
         $('#finalPrice6').text(function () {
             return Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle6').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle6').val('1');
         $('#qtGroup6').show();
         $('#finalPrice6').text(priceRefey003);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -355,13 +406,16 @@ $(function () {
     });
     $('#removeArticle6').click(function () {
         $(qtGroup6).hide();
-        $('#nbArticle6').val('1');
+        $('#nbArticle6').val('0');
         $('#finalPrice6').text(priceRefey003);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle6').focusout(function () {
         $('#finalPrice6').text(function () {
             return Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -377,6 +431,7 @@ $(function () {
         $('#finalPrice7').text(function () {
             return Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -389,15 +444,18 @@ $(function () {
         $('#finalPrice7').text(function () {
             return Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle7').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle7').val('1');
         $('#qtGroup7').show();
         $('#finalPrice7').text(priceRefcd001);
-        $('hr').show();
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -407,13 +465,16 @@ $(function () {
     });
     $('#removeArticle7').click(function () {
         $(qtGroup7).hide();
-        $('#nbArticle7').val('1');
+        $('#nbArticle7').val('0');
         $('#finalPrice7').text(priceRefcd001);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle7').focusout(function () {
         $('#finalPrice7').text(function () {
             return Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -429,6 +490,7 @@ $(function () {
         $('#finalPrice8').text(function () {
             return Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -441,14 +503,18 @@ $(function () {
         $('#finalPrice8').text(function () {
             return Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle8').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle8').val('1');
         $('#qtGroup8').show();
         $('#finalPrice8').text(priceRefct002);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -458,13 +524,16 @@ $(function () {
     });
     $('#removeArticle8').click(function () {
         $(qtGroup8).hide();
-        $('#nbArticle8').val('1');
+        $('#nbArticle8').val('0');
         $('#finalPrice8').text(priceRefct002);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle8').focusout(function () {
         $('#finalPrice8').text(function () {
             return Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -480,6 +549,7 @@ $(function () {
         $('#finalPrice9').text(function () {
             return Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -492,14 +562,18 @@ $(function () {
         $('#finalPrice9').text(function () {
             return Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $('#addArticle9').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
+        $('#nbArticle9').val('1');
         $('#qtGroup9').show();
         $('#finalPrice9').text(priceRefct003);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -509,13 +583,16 @@ $(function () {
     });
     $('#removeArticle9').click(function () {
         $(qtGroup9).hide();
-        $('#nbArticle9').val('1');
+        $('#nbArticle9').val('0');
         $('#finalPrice9').text(priceRefct003);
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle9').focusout(function () {
         $('#finalPrice9').text(function () {
             return Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100;
         });
+        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
     //show / hide Qt fin----------------------
 
@@ -524,23 +601,25 @@ $(function () {
 
     $('#emptyBasket').click(function () {
         $('#qtGroup').hide();
-        $('#nbArticle').val('1');
+        $('#nbArticle').val('0');
         $('#qtGroup2').hide();
-        $('#nbArticle2').val('1');
+        $('#nbArticle2').val('0');
         $('#qtGroup3').hide();
-        $('#nbArticle3').val('1');
+        $('#nbArticle3').val('0');
         $('#qtGroup4').hide();
-        $('#nbArticle4').val('1');
+        $('#nbArticle4').val('0');
         $('#qtGroup5').hide();
-        $('#nbArticle5').val('1');
+        $('#nbArticle5').val('0');
         $('#qtGroup6').hide();
-        $('#nbArticle6').val('1');
+        $('#nbArticle6').val('0');
         $('#qtGroup7').hide();
-        $('#nbArticle7').val('1');
+        $('#nbArticle7').val('0');
         $('#qtGroup8').hide();
-        $('#nbArticle8').val('1');
+        $('#nbArticle8').val('0');
         $('#qtGroup9').hide();
-        $('#nbArticle9').val('1');
+        $('#nbArticle9').val('0');
+        $('#totalCaddy').text(totalCaddy = 0);
+        $('#totalPrice').text(totalPrice = 0);
     });
 
     //////////////////////////////////////////////////remise a 1 fin////////////////////////////////////////////////////

@@ -1,19 +1,25 @@
 #home {
     min-height: 380px;
 }
-
 .vtrLogo {
     width: 15rem;
 }
-
+/* Fonts */
 .fontBankGothic {
-    font-family: BankGothic Md BT;
+    font-family: "BankGothic Md BT";
+}
+@font-face {
+    font-family: "BankGothic Md BT";
     src: url("../font/BankGothic Md BT.ttf");
 }
-
+/* Fonts */
 #bodyPics {
     background: url("../img/bodyPics.jpg"), center 0 no-repeat fixed;
     background-size: cover;
+}
+
+.cardSize {
+    height: 108px;
 }
 
 #categories1 {
@@ -31,6 +37,10 @@
 .navBarBorder {
     border-top: 3px solid #016a2d;
     border-bottom: 3px solid #ed0100;
+}
+.footerBorder {
+    border-bottom: 3px solid #016a2d;
+    border-top: 3px solid #ed0100;
 }
 
 /* Width title basket */
@@ -191,5 +201,4 @@
 .sizeRef {
     font-size: 12px;
 }
-
 /* size reference basket */
