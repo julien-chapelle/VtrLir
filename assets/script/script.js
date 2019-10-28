@@ -3,11 +3,11 @@ $(function () {
     $('#categories1').hide();
     $('.home').click(function () {
         $('#categories1').hide();
-        $('#home').show();
+        $('#home').slideDown(1000);
     });
     $('.categories1').click(function () {
         $('#home').hide();
-        $('#categories1').show();
+        $('#categories1').slideDown(500);
     });
 
 
@@ -20,6 +20,8 @@ $(function () {
     // var priceRef0007 = 2000;
     // var priceRef0008 = 2000;
     // var priceRef0009 = 2000;
+    var totalCaddy = 0;
+    var totalPrice = 2100;
 
     $("#qtGroup").hide();
     $("#qtGroup2").hide();
@@ -34,7 +36,6 @@ $(function () {
     //////////////////////////////////////////////////Article 1 début////////////////////////////////////////////////////
 
     //+ button début--------------------------------
-
     $("#addQuantity").click(function () {
         $("#nbArticle").val(function (i, val) {
             return val * 1 + 1;
@@ -42,6 +43,7 @@ $(function () {
         $("#finalPrice1").text(function () {
             return Math.round((priceRef0001 * $("#nbArticle").val()) * 100) / 100;
         });
+        $('#totalPrice').text(totalPrice += priceRef0001);
     });
     //+ button fin--------------------------------
     //- button début--------------------------------
@@ -54,15 +56,22 @@ $(function () {
         $("#finalPrice1").text(function () {
             return Math.round((priceRef0001 * $("#nbArticle").val()) * 100) / 100;
         });
+        $('#totalPrice').text(totalPrice -= priceRef0001);
+        if($('#nbArticle').val() == 1)
+        {
+            $('#totalPrice').text(totalPrice = priceRef0001);
+        }
+
     });
     //- button fin--------------------------------
 
     //panier +1 button début----------------------
     $("#addArticle").click(function () {
-        $('#notif').fadeIn(0).fadeOut(3000);
+        $('#notif').fadeIn(1000).fadeOut(2000);
         $("#qtGroup").show();
         $('#finalPrice1').text(priceRef0001);
-        $('hr').show();
+        $('#totalPrice').text(priceRef0001);
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -73,7 +82,8 @@ $(function () {
     $("#removeArticle").click(function () {
         $(qtGroup).hide();
         $('#nbArticle').val('1');
-        $('#finalPrice1').text(priceRef0001);
+        $('#totalCaddy').text(totalCaddy -= 1);
+        $('#totalPrice').text(totalPrice -= priceRef0001);
     });
     $('#nbArticle').focusout(function () {
         $("#finalPrice1").text(function () {
@@ -111,9 +121,10 @@ $(function () {
 
     //panier +1 button début----------------------
     $("#addArticle2").click(function () {
-        $('#notif').fadeIn(0).fadeOut(3000);
+        $('#notif').fadeIn(1000).fadeOut(3000);
         $("#qtGroup2").show();
         $('#finalPrice2').text(priceRef0002);
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -125,6 +136,7 @@ $(function () {
         $(qtGroup2).hide();
         $('#nbArticle2').val('1');
         $('#finalPrice2').text(priceRef0002);
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle2').focusout(function () {
         $("#finalPrice2").text(function () {
@@ -162,9 +174,10 @@ $(function () {
 
     //panier +1 button début----------------------
     $("#addArticle3").click(function () {
-        $('#notif').fadeIn(0).fadeOut(3000);
+        $('#notif').fadeIn(1000).fadeOut(3000);
         $("#qtGroup3").show();
         $('#finalPrice3').text(priceRef0003);
+        $('#totalCaddy').text(totalCaddy += 1);
     });
     //panier +1 button fin----------------------
     //show / hide Qt début----------------------
@@ -176,6 +189,7 @@ $(function () {
         $(qtGroup3).hide();
         $('#nbArticle3').val('1');
         $('#finalPrice3').text(priceRef0003);
+        $('#totalCaddy').text(totalCaddy -= 1);
     });
     $('#nbArticle3').focusout(function () {
         $("#finalPrice3").text(function () {
@@ -195,6 +209,7 @@ $(function () {
         $('#nbArticle2').val('1');
         $("#qtGroup3").hide();
         $('#nbArticle3').val('1');
+        $('#totalPrice').text(totalPrice = 0);
         // $("#qtGroup4").hide();
         // $('#nbArticle4').val('1');
         // $("#qtGroup5").hide();
@@ -211,12 +226,6 @@ $(function () {
 
     //////////////////////////////////////////////////Message panier vide fin////////////////////////////////////////////////////
     //////////////////////////////////////////////////To pay début////////////////////////////////////////////////////
-
-
-
-
-
-
 
     //////////////////////////////////////////////////To pay fin////////////////////////////////////////////////////
 });

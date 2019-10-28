@@ -43,7 +43,7 @@
             <ul class="navbar-nav ml-auto nav-flex-icons">
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="#" data-toggle="modal" data-target="#panier">
-                        <span class="mx-2" id="totalCaddy">0<i class="fas fa-shopping-cart"></i></span>
+                        <span class="mx-2"><span id="totalCaddy">0</span><i class="fas fa-shopping-cart"></i></span>
                     </a>
                 </li>
             </ul>
@@ -62,6 +62,11 @@
                 </div>
                 <div class="modal-body mx-3">
                     <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                    <div class="alert alert-success text-center" role="alert" id="notif">Votre article à bien été ajouté au panier</div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-4 m-auto">
                                 <h5 class="text-center">Article :</h5>
@@ -101,7 +106,7 @@
                             <div class="row justify-content-around border my-2">
                                 <div class="col-auto">
                                     <div class="row">
-                                        <div class="h6 align-middle">PRODUIT 2</div>
+                                        <div class="h6">PRODUIT 2</div>
                                     </div>
                                     <div class="row">
                                         <div class="h6">Ref : WB002</div>
@@ -140,7 +145,7 @@
                                         <div class="h6">2000€</div>
                                     </div>
                                 </div>
-                                <div class="input-group col-4">
+                                <div class="input-group col-4 my-auto">
                                     <div class="input-group-prepend">
                                         <span type="button" class="input-group-text" id="addQuantity3">+</span>
                                     </div>
@@ -149,8 +154,8 @@
                                         <span type="button" class="input-group-text" id="removeQuantity3">-</span>
                                     </div>
                                 </div>
-                                <div class="h5 w-20" id="finalPrice3"></div>
-                                <span>€</span>
+                                <div class="h5 w-20 my-auto" id="finalPrice3"></div>
+                                <span class="my-auto">€</span>
                                 <div>
                                     <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
                                             id="removeArticle3">×</span></a>
@@ -161,8 +166,8 @@
                 </div>
                 <div class="modal-footer d-flex">
                     <div class="row">
-                        <div class="col-12 text-center d-inline-block mx-3">
-                            <p class="border">Total : xxx€</p>
+                        <div class="col-10 text-center d-inline-block justify-content-center mx-3">
+                            <p class="border d-inline-block mx-auto">Total : <span id="totalPrice">0</span>€</p>
                         </div>
                         <button class="btn btn-dark btn-sm">Procéder au paiement</button>
                         <button class="btn btn-dark btn-sm" id="emptyBasket">Vider le panier</button>
@@ -173,7 +178,6 @@
     </div>
     <!-- Fin de la modal Accueil -->
     <!-- Notifications -->
-    <div class="alert alert-success text-center" role="alert" id="notif">Votre article à bien été ajouté au panier</div>
     <!-- /Notifications -->
     <div class="container-fluid">
         <div class="row">
@@ -181,7 +185,7 @@
             <div class="container-fluid">
                 <div class="col-12 my-5 border border-dark" id="categories1">
                     <div class="row justify-content-around">
-                        <div class="col-12 col-md-3 mx-auto">
+                        <div class="col-12 col-md-4 mx-auto">
                             <!-- Card -->
                             <div class="card my-2">
                                 <!-- Card image -->
@@ -202,7 +206,7 @@
                             </div>
                             <!-- Card -->
                         </div>
-                        <div class="col-12 col-md-3 mx-auto">
+                        <div class="col-12 col-md-4 mx-auto">
                             <!-- Card -->
                             <div class="card my-2">
                                 <!-- Card image -->
@@ -223,7 +227,7 @@
                             </div>
                             <!-- Card -->
                         </div>
-                        <div class="col-12 col-md-3 mx-auto">
+                        <div class="col-12 col-md-4 mx-auto">
                             <!-- Card -->
                             <div class="card my-2">
                                 <!-- Card image -->
