@@ -1,6 +1,9 @@
 #home {
     min-height: 380px;
 }
+#textParts {
+    min-height: 380px;
+}
 
 .vtrLogo {
     width: 15rem;
@@ -193,3 +196,87 @@
 }
 
 /* size reference basket */
+/* parts bike slector */
+
+#partsZone {
+    height: 284px;
+    width: 500px;
+    position: relative;
+}
+
+#vtrPicsParts {
+    position: absolute;
+}
+
+#carenageParts {
+    position: absolute;
+}
+
+#targetCarenagePosition {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 60%;
+
+}
+
+#targetCarenage {
+    position: absolute;
+    color: #ed0100;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+}
+
+#wheelParts {
+    position: absolute;
+}
+
+#targetWheelPosition {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 70%;
+    left: 6%;
+
+}
+
+#targetWheel {
+    position: absolute;
+    color: #ed0100;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#exhaustParts {
+    position: absolute;
+}
+
+#targetExhaust {
+    position: absolute;
+    color: #ed0100;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#targetExhaustPosition {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 45%;
+    left: 14%;
+
+}
+
+
+
+/* parts bike slector */

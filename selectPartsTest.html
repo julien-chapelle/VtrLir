@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tp Ecommerce</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet" />
+    <!-- Style.css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="fontBankGothic" id="bodyPics">
+    <!--Navbar -->
+    <nav class="mb-1 navbar navbar-expand-sm navbar-dark bg-dark sticky-top navBarBorder">
+        <a class="navbar-brand" href="#"><img src="assets/img/VtrLogo.png" title="vtrLogo" class="vtrLogo" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+            <ul class="navbar-nav mr-auto w-100 justify-content-around">
+                <li class="nav-item">
+                    <a class="nav-link home" href="#">Accueil
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories1" href="#">Jantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories2" href="#">Echappement</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories3" href="#">Carénages</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="#" data-toggle="modal" data-target="#panier">
+                        <span class="mx-2" id="totalCaddy">0<i class="fas fa-shopping-cart"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Navbar -->
+    <!-- Accueil DEBUT -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container-fluid d-flex justify-content-around">
+                <div class="col-12 col-lg-5 my-5 border border-dark" id="home">
+                    <div id="partsZone" class="img-fluid">
+                        <img src="assets/img/selectParts.png" title="VtrPicsParts" id="vtrPicsParts"
+                            class="vtrPicsParts img-fluid" />
+                        <img src="assets/img/selectPartsCarenage.png" title="VtrPicsPartsCarenage" id="carenageParts"
+                            class=" img-fluid" />
+                        <img src="assets/img/selectPartsWheel.png" title="VtrPicsPartsWheel" id="wheelParts"
+                            class=" img-fluid" />
+                        <img src="assets/img/selectPartsExhaust.png" title="VtrPicsPartsExhaust" id="exhaustParts"
+                            class=" img-fluid" />
+
+                        <div id="targetWheelPosition">
+                            <span id="targetWheel"><i class="far fa-dot-circle"></i></span>
+                        </div>
+                        <div id="targetCarenagePosition">
+                            <div id="targetCarenage"><i class="far fa-dot-circle"></i></div>
+                        </div>
+                        <div id="targetExhaustPosition">
+                            <div id="targetExhaust"><i class="far fa-dot-circle"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7 my-5 border border-dark">
+                    <p id="accueilText" class="h5">VTR L.I.R :</br>
+                        La VTR SP1 & SP2 de chez Honda est devenue véritable collector. Les versions compétitions ont largement démontrées de quoi était capable la VTR.</p>
+                    <P id="carenageText" class="h5">CARENAGE :</br>
+                        On peut changer l'habillage d'origine par un adaptable plus léger et moins cher en cas de casse.
+                        Il existe beaucoup de fournisseurs. Les matériaux employés font varier le prix, le poids et la
+                        résistance. L'ensemble le moins cher est constitué de fibre de verre et de résine polyester. Il
+                        n'est pas très léger, peu résistant à l'abrasion mais se répare facilement. Attention, certains
+                        sont simplement recouverts d'une peau carbone et sont vendus beaucoup plus chers. A part le
+                        look, leurs caractéristiques sont similaires. Le top, c'est un mixte de fibres carbone et kevlar
+                        (pour la légèreté et la résistance à l'abrasion) avec une résine époxy (beaucoup plus légère).
+
+                        Les précautions à prendre sont simples. Il vaut mieux conserver les pattes de fixation
+                        d'origine. Elles sont maintenant relativement légères et prévues ( forme et matériau) pour
+                        résister aux vibrations. Si vous les changez, conservez ces caractéristiques. La visserie doit
+                        concilier rapidité d'accès et résistance au démontage. Utilisez des silents-blocs et des
+                        rondelles plastiques.</P>
+                    <P id="wheelText" class="h5">JANTE :</br>
+                        De même que pour la transmission, le gain est plus important par la diminution de masse
+                        non-suspendue que par le gain de poids dans l'absolu. Il existe aussi beaucoup de fournisseurs
+                        de roues. Un certain nombre de séries de roues magnésium ont été livrées avec des défauts (des
+                        criques) par le passé, il vaut donc mieux s'assurer de la qualité du fournisseur en demandant
+                        plusieurs avis. Les roues magnésium ont une durée de vie de 2 ans en moyenne, au-delà, le métal
+                        vieillissant, cela devient risqué. Des porosités et des fissures peuvent en effet apparaître .
+                        Il ne faut pas enlever la peinture d'origine (éventuellement la recouvrir) car elle est étudiée
+                        pour protéger le magnésium.
+
+                        Pour l'arrière, il faut aussi examiner la qualité du support de transmission. Il varie en
+                        général de l'origine et il faut donc changer les couronnes. Pour l'avant, vérifiez l'entraxe de
+                        fixation de disque, le nombre et l'écartement des filetages.</P>
+                    <P id="exhaustText" class="h5">ECHAPPEMENT :</br>
+                        Il est très rare de trouver des silencieux à absorption plus performants que l'origine. Hélas,
+                        ceux-ci sont en général très lourds.
+
+                        Veillez donc à choisir un silencieux testé dans un comparatif pour associer votre gain de poids
+                        à une conservation des performances. Tous les règlements ne le permettent pas, mais un
+                        changement de l'échappement complet permet de gagner beaucoup de poids. Là encore, il ne faut
+                        pas
+                        choisir un modèle beaucoup plus important en diamètre de tube sans l'adapter à l'admission et
+                        aux diagrammes d'arbre à cames.</P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Accueil FIN -->
+
+
+
+
+
+
+
+    <!-- script début -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js">
+    </script>
+    <script src="test.js"></script>
+    <!-- ToTop Button script -->
+    <script src="assets/script/to-top.js"></script>
+    <!-- script fin -->
+</body>
+
+</html>
