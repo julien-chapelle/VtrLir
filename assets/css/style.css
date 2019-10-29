@@ -1,0 +1,328 @@
+#home {
+    min-height: 380px;
+}
+
+/* #textParts {
+    min-height: 380px;
+} */
+/* Sign In */
+.bgHeader {
+    background-color: #ed0100;
+}
+
+.bgBody {
+    background-color: #212121;
+}
+
+.borderFooter {
+    border-color: #016a2d;
+}
+
+.borderArticle {
+    border-bottom: 2px solid #016a2d;
+    border-top: 2px solid #016a2d;
+}
+
+.colorCross {
+    color: #ed0100;
+}
+
+.colorIcon {
+    color: #016a2d;
+}
+
+/* Sign In */
+.vtrLogo {
+    width: 15rem;
+}
+
+/* Fonts */
+.fontBankGothic {
+    font-family: "BankGothic Md BT";
+}
+
+@font-face {
+    font-family: "BankGothic Md BT";
+    src: url("../font/BankGothic Md BT.ttf");
+}
+
+/* Fonts */
+#bodyPics {
+    background: url("../img/bodyPics.jpg"), center 0 no-repeat fixed;
+    background-size: cover;
+}
+
+.cardSize {
+    height: 108px;
+}
+
+#categories1 {
+    min-height: 380px;
+}
+
+#categories2 {
+    min-height: 380px;
+}
+
+#categories3 {
+    min-height: 380px;
+}
+
+.navBarBorder {
+    border-top: 3px solid #016a2d;
+    border-bottom: 3px solid #ed0100;
+}
+
+.footerBorder {
+    border-bottom: 3px solid #016a2d;
+    border-top: 3px solid #ed0100;
+}
+
+/* Width title basket */
+.wTitleBasket {
+    width: 8rem;
+}
+
+/* Article 1 */
+#addQuantity {
+    height: 30px;
+}
+
+#removeQuantity {
+    height: 30px;
+}
+
+#nbArticle {
+    height: 30px
+}
+
+/* Article 1 */
+
+/* Article 2 */
+#addQuantity2 {
+    height: 30px;
+}
+
+#removeQuantity2 {
+    height: 30px;
+}
+
+#nbArticle2 {
+    height: 30px;
+}
+
+/* Article 2 */
+
+/* Article 3 */
+#addQuantity3 {
+    height: 30px;
+}
+
+#removeQuantity3 {
+    height: 30px;
+}
+
+#nbArticle3 {
+    height: 30px;
+}
+
+/* Article 3 */
+
+/* Article 4 */
+#addQuantity4 {
+    height: 30px;
+}
+
+#removeQuantity4 {
+    height: 30px;
+}
+
+#nbArticle4 {
+    height: 30px;
+}
+
+/* Article 4 */
+
+/* Article 5 */
+#addQuantity5 {
+    height: 30px;
+}
+
+#removeQuantity5 {
+    height: 30px;
+}
+
+#nbArticle5 {
+    height: 30px;
+}
+
+/* Article 5 */
+
+/* Article 6 */
+#addQuantity6 {
+    height: 30px;
+}
+
+#removeQuantity6 {
+    height: 30px;
+}
+
+#nbArticle6 {
+    height: 30px;
+}
+
+/* Article 6 */
+
+/* Article 7 */
+#addQuantity7 {
+    height: 30px;
+}
+
+#removeQuantity7 {
+    height: 30px;
+}
+
+#nbArticle7 {
+    height: 30px;
+}
+
+/* Article 7 */
+
+/* Article 8 */
+#addQuantity8 {
+    height: 30px;
+}
+
+#removeQuantity8 {
+    height: 30px;
+}
+
+#nbArticle8 {
+    height: 30px;
+}
+
+/* Article 8 */
+
+/* Article 9 */
+#addQuantity9 {
+    height: 30px;
+}
+
+#removeQuantity9 {
+    height: 30px;
+}
+
+#nbArticle9 {
+    height: 30px;
+}
+
+/* Article 9 */
+
+/* scrollUp button */
+#scrollUp {
+    position: fixed;
+    bottom: 5px;
+    right: -100px;
+    font-size: 50px;
+}
+
+.scrollUpColor {
+    color: #016a2d;
+    opacity: 0.7;
+}
+
+/* scrollUp button */
+
+/* size reference basket */
+.sizeRef {
+    font-size: 12px;
+}
+
+/* size reference basket */
+/* parts bike slector */
+
+#partsZone {
+    height: 56.25vw;
+    width: 75vw;
+    position: relative;
+    max-height: 284px;
+    max-width: 500px;
+}
+
+#vtrPicsParts {
+    position: absolute;
+}
+
+#carenageParts {
+    position: absolute;
+}
+
+#targetCarenagePosition {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 60%;
+
+}
+
+#targetCarenage {
+    position: absolute;
+    color: #ed0100;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+}
+
+#wheelParts {
+    position: absolute;
+}
+
+#targetWheelPosition {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 70%;
+    left: 6%;
+
+}
+
+#targetWheel {
+    position: absolute;
+    color: #ed0100;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#exhaustParts {
+    position: absolute;
+}
+
+#targetExhaust {
+    position: absolute;
+    color: #ed0100;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#targetExhaustPosition {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 42%;
+    left: 14%;
+
+}
+
+
+
+/* parts bike slector */
