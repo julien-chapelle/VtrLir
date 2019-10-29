@@ -12,6 +12,12 @@ $(function () {
         $('#categories3').hide();
         $('#home').fadeIn(500);
     });
+    $('.navbar-brand').click(function () {
+        $('#categories1').hide();
+        $('#categories2').hide();
+        $('#categories3').hide();
+        $('#home').fadeIn(500);
+    });
     $('.categories1').click(function () {
         $('#home').hide();
         $('#categories2').hide();
@@ -66,6 +72,23 @@ $(function () {
     $('#nbArticle7').val('0');
     $('#nbArticle8').val('0');
     $('#nbArticle9').val('0');
+
+    ////////////////////// Fermeture Auto Navbar Smartphone ///////////////////////////////////////////////////////////// 
+    $('.nav-link').click(function () {
+    
+        if ($('.navbar-toggler').is(":visible")) {
+            
+            $('.navbar-toggler').click();
+
+        };
+    });
+    ////////////////////// Fermeture Auto Navbar Smartphone /////////////////////////////////////////////////////////////
+    ////////////////////// Animation Menu Hamburger /////////////////////////////////////////////////////////////
+    $('.second-button').click(function () {
+    
+        $('.animated-icon2').toggleClass('open');
+
+    }); 
     //////////////////////////////////////////////////JANTE Article 1 début////////////////////////////////////////////////////
 
     //+ button début--------------------------------
