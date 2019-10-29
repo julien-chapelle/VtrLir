@@ -1,3 +1,13 @@
+span[type=button] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+a[type=button] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
 #home {
     min-height: 380px;
 }
@@ -67,10 +77,11 @@
 #categories3 {
     min-height: 380px;
 }
+
 /* Button For Hamburger Menu */
 
 .colorMenu {
-    background-color: #ed0100!important;
+    background-color: #ed0100 !important;
 }
 
 .animated-icon2 {
@@ -88,6 +99,7 @@
     transition: .5s ease-in-out;
     cursor: pointer;
 }
+
 .animated-icon2 span {
     display: block;
     position: absolute;
@@ -105,9 +117,11 @@
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
 }
+
 .animated-icon2 span {
     background: #e3f2fd;
 }
+
 .animated-icon2 span:nth-child(1) {
     top: 0px;
 }
@@ -123,28 +137,33 @@
 .animated-icon2 span:nth-child(4) {
     top: 20px;
 }
+
 .animated-icon2.open span:nth-child(1) {
     top: 11px;
     width: 0%;
     left: 50%;
 }
+
 .animated-icon2.open span:nth-child(2) {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
 .animated-icon2.open span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
+
 .animated-icon2.open span:nth-child(4) {
     top: 11px;
     width: 0%;
     left: 50%;
 }
+
 /* Button For Hamburger Menu */
 .navBarBorder {
     border-top: 3px solid #016a2d;
