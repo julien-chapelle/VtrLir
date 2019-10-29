@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tp Ecommerce</title>
+    <title>VTR Light.Is.Right</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -28,23 +28,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto w-100 justify-content-around">
                     <li class="nav-item">
-                        <a class="nav-link home" href="#">Accueil
+                        <a class="nav-link home h5" href="#">Accueil
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link categories1" href="#">Jantes</a>
+                        <a class="nav-link categories1 h5" href="#">Jantes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link categories2" href="#">Echappement</a>
+                        <a class="nav-link categories2 h5" href="#">Echappement</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link categories3" href="#">Carénages</a>
+                        <a class="nav-link categories3 h5" href="#">Carénages</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto nav-flex-icons">
                     <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light" href="#" data-toggle="modal" data-target="#panier">
+                        <a class="nav-link waves-effect waves-light" href="#" data-toggle="modal" data-target="#signIn">
                             <span class="mx-2"><i class="far fa-user"></i></span>
                         </a>
                     </li>
@@ -155,14 +155,14 @@
         <div class="modal fade right" id="panier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-full-height modal-right" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h2 class="modal-title text-center w-100 font-weight-bold">Mon Panier</h2>
+                <div class="modal-content bgBody">
+                    <div class="modal-header bgHeader border-dark text-center">
+                        <h2 class="modal-title text-center ml-3 w-100 font-weight-bold">Mon Panier</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body mx-1 p-0 pb-2">
+                    <div class="modal-body text-white mx-1 p-0 pb-2">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12">
@@ -176,8 +176,8 @@
                                 </div>
                             </div>
                             <!-- Article WM001 PANIER DEBUT -->
-                            <div id="qtGroup">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6">Marchesini M10RS</div>
@@ -198,18 +198,18 @@
                                             <span type="button" class="input-group-text" id="removeQuantity">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice1"></div>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice1"></div>
                                     <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article WM001 PANIER FIN -->
                             <!-- Article WB002 PANIER DEBUT -->
-                            <div id="qtGroup2">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup2" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6 align-middle">BST Black Diamond</div>
@@ -230,18 +230,18 @@
                                             <span type="button" class="input-group-text" id="removeQuantity2">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice2"></div>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice2"></div>
                                     <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle2">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle2" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article WB002 PANIER FIN -->
                             <!-- Article WO003 PANIER DEBUT -->
-                            <div id="qtGroup3">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup3" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6 align-middle">OZ Piega</div>
@@ -262,18 +262,18 @@
                                             <span type="button" class="input-group-text" id="removeQuantity3">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice3"></div>
-                                    <span>€</span>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice3"></div>
+                                    <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle3">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle3" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article WO003 PANIER FIN -->
                             <!-- Article EA001 PANIER DEBUT -->
-                            <div id="qtGroup4">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup4" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6 align-middle">Akrapovic hexa carbone</div>
@@ -294,18 +294,18 @@
                                             <span type="button" class="input-group-text" id="removeQuantity4">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice4"></div>
-                                    <span>€</span>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice4"></div>
+                                    <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle4">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle4" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article EA001 PANIER FIN -->
                             <!-- Article ER002 PANIER DEBUT -->
-                            <div id="qtGroup5">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup5" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6 align-middle">RP oval carbone</div>
@@ -326,18 +326,18 @@
                                             <span type="button" class="input-group-text" id="removeQuantity5">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice5"></div>
-                                    <span>€</span>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice5"></div>
+                                    <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle5">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle5" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article ER002 PANIER FIN -->
                             <!-- Article EY003 PANIER DEBUT -->
-                            <div id="qtGroup6">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup6" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6 align-middle">Yoshimura RS3 inox</div>
@@ -358,18 +358,18 @@
                                             <span type="button" class="input-group-text" id="removeQuantity6">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice6"></div>
-                                    <span>€</span>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice6"></div>
+                                    <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle6">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle6" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article EY003 PANIER FIN -->
                             <!-- Article CD001 PANIER DEBUT -->
-                            <div id="qtGroup7">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup7" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6 align-middle">DHC Carénage av carbone</div>
@@ -390,18 +390,18 @@
                                             <span type="button" class="input-group-text" id="removeQuantity7">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice7"></div>
-                                    <span>€</span>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice7"></div>
+                                    <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle7">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle7" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article CD001 PANIER FIN -->
                             <!-- Article CT002 PANIER DEBUT -->
-                            <div id="qtGroup8">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup8" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6 align-middle">Tyga Coque ar carbone.</div>
@@ -422,18 +422,18 @@
                                             <span type="button" class="input-group-text" id="removeQuantity8">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice8"></div>
-                                    <span>€</span>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice8"></div>
+                                    <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle8">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle8" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article CT002 PANIER FIN -->
                             <!-- Article CT003 PANIER DEBUT -->
-                            <div id="qtGroup9">
-                                <div class="row justify-content-around border">
+                            <div id="qtGroup9" class="my-1">
+                                <div class="row justify-content-around borderArticle">
                                     <div class="col-auto ml-1">
                                         <div class="row wTitleBasket">
                                             <div class="h6 align-middle">Tyga garde boue av carbone.</div>
@@ -454,24 +454,25 @@
                                             <span type="button" class="input-group-text" id="removeQuantity9">-</span>
                                         </div>
                                     </div>
-                                    <div class="h5 w-20 my-auto" id="finalPrice9"></div>
-                                    <span>€</span>
+                                    <div class="h6 w-20 my-auto ml-2" id="finalPrice9"></div>
+                                    <span class="my-auto">€</span>
                                     <div>
-                                        <a type="button" class="close ml-3" aria-label="Close"><span aria-hidden="true"
-                                                id="removeArticle9">×</span></a>
+                                        <a type="button" class="close" aria-label="Close"><span aria-hidden="true"
+                                                id="removeArticle9" class="colorCross">×</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Article CT003 PANIER FIN -->
                         </div>
                     </div>
-                    <div class="modal-footer d-flex">
-                        <div class="row">
-                            <div class="col-12 text-center d-inline-block mx-3">
-                                <p class="border">Total : <span id="totalPrice">0</span>€</p>
+                    <div class="modal-footer borderFooter d-flex">
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-center">
+                                <p class="d-inline-block text-white">Total : <span id="totalPrice">0</span>€</p>
                             </div>
-                            <button class="btn btn-outline-danger btn-sm">Procéder au paiement</button>
-                            <button class="btn btn-outline-success btn-sm" id="emptyBasket">Vider le panier</button>
+                            <button class="btn btn-outline-success btn-sm text-center">Procéder au paiement</button>
+                            <button class="btn btn-outline-danger btn-sm text-center" id="emptyBasket">Vider le
+                                panier</button>
                         </div>
                     </div>
                 </div>
@@ -479,6 +480,50 @@
         </div>
         <!-- Fin de la modal panier -->
 
+        <!-- Début de la modal de connection -->
+        <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content bgBody text-white">
+                    <div class="modal-header border-dark bgHeader text-center text-dark">
+                        <h4 class="modal-title w-100 font-weight-bold">Connectez-Vous</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="mb-5">
+                            <i class="fas fa-user prefix colorIcon ml-1"></i>
+                            <label data-error="wrong" data-success="right" for="username">Votre Identifiant</label>
+                            <input type="text" id="username" class="form-control validate">
+                        </div>
+                        <div class="mb-5">
+                            <i class="fas fa-envelope prefix colorIcon ml-1"></i>
+                            <label data-error="wrong" data-success="right" for="email">Votre Mail</label>
+                            <input type="email" id="email" class="form-control validate">
+                        </div>
+
+                        <div class="mb-4">
+                            <i class="fas fa-lock prefix colorIcon ml-1"></i>
+                            <label data-error="wrong" data-success="right" for="password">Votre mot de passe</label>
+                            <input type="password" id="password" class="form-control validate">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center borderFooter">
+                        <div class="row mx-auto">
+                            <div class="col-12 text-center">
+                                <button class="btn btn-outline-success btn-sm">Comfirmez</button>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-outline-danger btn-sm">Inscrivez-Vous</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin de la modal de connection -->
 
         <!-- Catégories JANTE DEBUT -->
         <div class="container-fluid">
@@ -486,76 +531,54 @@
                 <div class="container-fluid">
                     <div class="col-12 my-5" id="categories1">
                         <div class="row justify-content-around">
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/marchesiniM10rs.jpg" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">Marchesini M10RS.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Jantes en aluminium forgées Kompe.</br>
                                             Pour HONDA VTR 1000 SP1 / SP2 2000> 2006.</p></br>
                                         <p class="h5">2100€</p>
-                                        <!-- Button -->
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle">Ajouter au Panier</Marchesini>
                                             <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                                 data-target="#techWm001" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/Bst.jpg" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">BST Black Diamond.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Jantes en fibre de carbone.</br>
                                             Pour Honda VTR 1000 SP1 / SP2 2000> 2005.</p></br>
                                         <p class="h5">3599€</p>
-                                        <!-- Button -->
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle2">Ajouter au Panier</BST>
                                             <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                                 data-target="#techWb002" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/ozPiega.jpg" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">OZ Piega.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Jantes en aluminium forgées.</br>
                                             Pour HONDA VTR 1000 SP1 / SP2 2000> 2006.</p></br>
                                         <p class="h5">2000€</p>
-                                        <!-- Button -->
                                         <a type="button" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle3">Ajouter au Panier</a>
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#techWo003" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <!-- Catégories JANTE FIN -->
@@ -567,71 +590,50 @@
                 <div class="container-fluid">
                     <div class="col-12 my-5" id="categories2">
                         <div class="row justify-content-around">
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/akrapovicCarbon.jpg" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">Akrapovic hexagonal carbone.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Ligne complète - Silencieux carbones.</br>
                                             Pour HONDA VTR 1000 SP1 / SP2 2002> 2006.</p></br>
                                         <p class="h5">2200€</p>
-                                        <!-- Button -->
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle4">Ajouter au Panier</a>
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#techEa001" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/RpCarbon.jpg" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">RP Motorsport oval carbone.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Ligne complète - Silencieux carbones.</br>
                                             Pour Honda VTR 1000 SP1 / SP2 2000> 2006.</p></br>
                                         <p class="h5">1500€</p>
-                                        <!-- Button -->
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle5">Ajouter au Panier</a>
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#techEr002" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/yoshimuraRs3.png" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">Yoshimura RS3 oval inox.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Demi-ligne - Silencieux inox.</br>
                                             Pour HONDA VTR 1000 SP1 / SP2 2000> 2006.</p></br>
                                         <p class="h5">800€</p>
-                                        <!-- Button -->
                                         <a type="button" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle6">Ajouter au Panier</a>
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#techEy003" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
                         </div>
                     </div>
@@ -647,73 +649,52 @@
                 <div class="container-fluid">
                     <div class="col-12 my-5" id="categories3">
                         <div class="row justify-content-around">
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/carenageCarbon.jpg" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">DHC Carénage avant complet carbone.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Ensemble carénage avant + flanc gauche et droite
                                             carbones
                                             version route.</br>
                                             Pour HONDA VTR 1000 SP1 / SP2 2000> 2006.</p></br>
                                         <p class="h5">1700€</p>
-                                        <!-- Button -->
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle7">Ajouter au Panier</a>
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#techCd001" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/CoqueArTyga.jpg" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">Tyga coque arrière carbone.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Coque arrière carbones version route.</br>
                                             Pour Honda VTR 1000 SP1 / SP2 2000> 2006.</p></br>
                                         <p class="h5">770€</p>
-                                        <!-- Button -->
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle8">Ajouter au Panier</a>
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#techCt002" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
-                            <div class="col-10 col-lg-3 mx-auto">
-                                <!-- Card -->
+                            <div class="col-11 col-lg-3 mx-auto">
                                 <div class="card my-2">
-                                    <!-- Card image -->
                                     <img class="card-img-top" src="assets/img/gardeBoueCarbon.jpg" alt="Card image cap">
-                                    <!-- Card content -->
                                     <div class="card-body">
-                                        <!-- Title -->
                                         <h4 class="card-title h6">Tyga garde boue avant carbone.</h4>
-                                        <!-- Text -->
                                         <p class="card-text cardSize">Garde boue avant carbone version route.</br>
                                             Pour HONDA VTR 1000 SP1 / SP2 2000> 2006.</p></br>
                                         <p class="h5">200€</p>
-                                        <!-- Button -->
                                         <a type="button" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#panier" id="addArticle9">Ajouter au Panier</a>
                                         <a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
                                             data-target="#techCt003" title="Détails"><i class="fas fa-cogs"></i></a>
                                     </div>
                                 </div>
-                                <!-- Card -->
                             </div>
                         </div>
                     </div>
@@ -1103,10 +1084,14 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="flex-center h5 my-auto">
-                                    <a href="https://fr-fr.facebook.com/" target="_blank" title="facebook"><i class="fab fa-facebook-f mx-3"></i></a>
-                                    <a href="https://twitter.com/?lang=fr" target="_blank" title="twitter"><i class="fab fa-twitter mx-3"></i></a>
-                                    <a href="https://www.instagram.com/?hl=fr" target="_blank" title="instagram"><i class="fab fa-instagram mx-3"></i></a>
-                                    <a href="https://www.pinterest.fr//" target="_blank" title="pinterest"><i class="fab fa-pinterest-p mx-3"></i></a>
+                                    <a href="https://fr-fr.facebook.com/" target="_blank" title="facebook"><i
+                                            class="fab fa-facebook-f mx-3"></i></a>
+                                    <a href="https://twitter.com/?lang=fr" target="_blank" title="twitter"><i
+                                            class="fab fa-twitter mx-3"></i></a>
+                                    <a href="https://www.instagram.com/?hl=fr" target="_blank" title="instagram"><i
+                                            class="fab fa-instagram mx-3"></i></a>
+                                    <a href="https://www.pinterest.fr//" target="_blank" title="pinterest"><i
+                                            class="fab fa-pinterest-p mx-3"></i></a>
                                 </div>
                             </div>
                         </div>

@@ -1,21 +1,51 @@
 #home {
     min-height: 380px;
 }
+
 /* #textParts {
     min-height: 380px;
 } */
+/* Sign In */
+.bgHeader {
+    background-color: #ed0100;
+}
 
+.bgBody {
+    background-color: #212121;
+}
+
+.borderFooter {
+    border-color: #016a2d;
+}
+
+.borderArticle {
+    border-bottom: 2px solid #016a2d;
+    border-top: 2px solid #016a2d;
+}
+
+.colorCross {
+    color: #ed0100;
+}
+
+.colorIcon {
+    color: #016a2d;
+}
+
+/* Sign In */
 .vtrLogo {
     width: 15rem;
 }
+
 /* Fonts */
 .fontBankGothic {
     font-family: "BankGothic Md BT";
 }
+
 @font-face {
     font-family: "BankGothic Md BT";
     src: url("../font/BankGothic Md BT.ttf");
 }
+
 /* Fonts */
 #bodyPics {
     background: url("../img/bodyPics.jpg"), center 0 no-repeat fixed;
@@ -42,6 +72,7 @@
     border-top: 3px solid #016a2d;
     border-bottom: 3px solid #ed0100;
 }
+
 .footerBorder {
     border-bottom: 3px solid #016a2d;
     border-top: 3px solid #ed0100;
@@ -206,6 +237,7 @@
 .sizeRef {
     font-size: 12px;
 }
+
 /* size reference basket */
 /* parts bike slector */
 
@@ -281,6 +313,7 @@
     left: 0;
     z-index: 1;
 }
+
 #targetExhaustPosition {
     position: absolute;
     width: 1px;

@@ -57,7 +57,7 @@ $(function () {
     $('#qtGroup8').hide();
     $('#qtGroup9').hide();
     $('#notif').hide();
-    $('#nbArticle').val('0');
+    $('#nbArticle').val(0);
     $('#nbArticle2').val('0');
     $('#nbArticle3').val('0');
     $('#nbArticle4').val('0');
@@ -97,7 +97,7 @@ $(function () {
     //panier +1 button début----------------------
     $('#addArticle').click(function () {
         $('#notif').fadeIn(0).fadeOut(3000);
-        $('#nbArticle').val('1');
+        $('#nbArticle').val(1);
         $('#qtGroup').show();
         $('#finalPrice1').text(priceRefwm001);
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
@@ -111,16 +111,26 @@ $(function () {
     });
     $('#removeArticle').click(function () {
         $(qtGroup).hide();
-        $('#nbArticle').val('0');
+        $('#nbArticle').val(0);
         $('#finalPrice1').text(priceRefwm001);
         $('#totalCaddy').text(totalCaddy -= 1);
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
-    $('#nbArticle').focusout(function () {
-        $('#finalPrice1').text(function () {
-            return Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle').keyup(function () {
+        if (($('#nbArticle').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle').val(1);
+        };
+
+        if (($('#nbArtiicle').val()) >= 0 || ($('#nbArticle').val()) <= 100 ) {
+            $('#finalPrice1').text(Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle').val(1);
+            $('#finalPrice1').text(Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -175,11 +185,21 @@ $(function () {
         $('#totalCaddy').text(totalCaddy -= 1);
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
     });
-    $('#nbArticle2').focusout(function () {
-        $('#finalPrice2').text(function () {
-            return Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle2').keyup(function () {
+        if (($('#nbArticle2').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle2').val(1);
+        };
+
+        if (($('#nbArtiicle2').val()) >= 0 || ($('#nbArticle2').val()) <= 100 ) {
+            $('#finalPrice2').text(Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle2').val(1);
+            $('#finalPrice2').text(Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -234,11 +254,21 @@ $(function () {
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
         $('#totalCaddy').text(totalCaddy -= 1);
     });
-    $('#nbArticle3').focusout(function () {
-        $('#finalPrice3').text(function () {
-            return Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle3').keyup(function () {
+        if (($('#nbArticle3').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle3').val(1);
+        };
+
+        if (($('#nbArtiicle3').val()) >= 0 || ($('#nbArticle3').val()) <= 100 ) {
+            $('#finalPrice3').text(Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle3').val(1);
+            $('#finalPrice3').text(Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -293,11 +323,21 @@ $(function () {
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
         $('#totalCaddy').text(totalCaddy -= 1);
     });
-    $('#nbArticle4').focusout(function () {
-        $('#finalPrice4').text(function () {
-            return Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle4').keyup(function () {
+        if (($('#nbArticle4').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle4').val(1);
+        };
+
+        if (($('#nbArtiicle4').val()) >= 0 || ($('#nbArticle4').val()) <= 100 ) {
+            $('#finalPrice4').text(Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle4').val(1);
+            $('#finalPrice4').text(Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -352,11 +392,21 @@ $(function () {
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
         $('#totalCaddy').text(totalCaddy -= 1);
     });
-    $('#nbArticle5').focusout(function () {
-        $('#finalPrice5').text(function () {
-            return Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle5').keyup(function () {
+        if (($('#nbArticle5').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle5').val(1);
+        };
+
+        if (($('#nbArtiicle5').val()) >= 0 || ($('#nbArticle5').val()) <= 100 ) {
+            $('#finalPrice5').text(Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle5').val(1);
+            $('#finalPrice5').text(Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -411,11 +461,21 @@ $(function () {
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
         $('#totalCaddy').text(totalCaddy -= 1);
     });
-    $('#nbArticle6').focusout(function () {
-        $('#finalPrice6').text(function () {
-            return Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle6').keyup(function () {
+        if (($('#nbArticle6').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle6').val(1);
+        };
+
+        if (($('#nbArtiicle6').val()) >= 0 || ($('#nbArticle6').val()) <= 100 ) {
+            $('#finalPrice6').text(Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle6').val(1);
+            $('#finalPrice6').text(Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -470,11 +530,21 @@ $(function () {
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
         $('#totalCaddy').text(totalCaddy -= 1);
     });
-    $('#nbArticle7').focusout(function () {
-        $('#finalPrice7').text(function () {
-            return Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle7').keyup(function () {
+        if (($('#nbArticle7').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle7').val(1);
+        };
+
+        if (($('#nbArtiicle7').val()) >= 0 || ($('#nbArticle7').val()) <= 100 ) {
+            $('#finalPrice7').text(Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle7').val(1);
+            $('#finalPrice7').text(Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -529,11 +599,21 @@ $(function () {
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
         $('#totalCaddy').text(totalCaddy -= 1);
     });
-    $('#nbArticle8').focusout(function () {
-        $('#finalPrice8').text(function () {
-            return Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle8').keyup(function () {
+        if (($('#nbArticle8').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle8').val(1);
+        };
+
+        if (($('#nbArtiicle8').val()) >= 0 || ($('#nbArticle8').val()) <= 100 ) {
+            $('#finalPrice8').text(Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle8').val(1);
+            $('#finalPrice8').text(Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -588,11 +668,21 @@ $(function () {
         $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
         $('#totalCaddy').text(totalCaddy -= 1);
     });
-    $('#nbArticle9').focusout(function () {
-        $('#finalPrice9').text(function () {
-            return Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100;
-        });
-        $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+    $('#nbArticle9').keyup(function () {
+        if (($('#nbArticle9').val()) < 0) {
+            alert ('Vous ne pouvez pas mettre de quantités négatives.');
+            return $('#nbArticle9').val(1);
+        };
+
+        if (($('#nbArtiicle9').val()) >= 0 || ($('#nbArticle9').val()) <= 100 ) {
+            $('#finalPrice9').text(Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        } else {
+            alert ('Veuillez saisir un nombre.');
+            $('#nbArticle9').val(1);
+            $('#finalPrice9').text(Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100);
+            $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
+        };
     });
     //show / hide Qt fin----------------------
 
@@ -621,15 +711,4 @@ $(function () {
         $('#totalCaddy').text(totalCaddy = 0);
         $('#totalPrice').text(totalPrice = 0);
     });
-
-    //////////////////////////////////////////////////remise a 1 fin////////////////////////////////////////////////////
-    //////////////////////////////////////////////////To pay début////////////////////////////////////////////////////
-
-
-
-
-
-
-
-    //////////////////////////////////////////////////To pay fin////////////////////////////////////////////////////
 });
