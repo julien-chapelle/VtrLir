@@ -121,8 +121,7 @@ $(function () {
             alert ('Vous ne pouvez pas mettre de quantités négatives.');
             return $('#nbArticle').val(1);
         };
-
-        if (($('#nbArtiicle').val()) >= 0 || ($('#nbArticle').val()) <= 100 ) {
+        if (($('#nbArtiicle').val()) >= 0 || ($('#nbArticle').val()) <= 150 ) {
             $('#finalPrice1').text(Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100);
             $('#totalPrice').text((Math.round((priceRefwm001 * $('#nbArticle').val()) * 100) / 100) + (Math.round((priceRefwb002 * $('#nbArticle2').val()) * 100) / 100) + (Math.round((priceRefwo003 * $('#nbArticle3').val()) * 100) / 100) + (Math.round((priceRefea001 * $('#nbArticle4').val()) * 100) / 100) + (Math.round((priceRefer002 * $('#nbArticle5').val()) * 100) / 100) + (Math.round((priceRefey003 * $('#nbArticle6').val()) * 100) / 100) + (Math.round((priceRefcd001 * $('#nbArticle7').val()) * 100) / 100) + (Math.round((priceRefct002 * $('#nbArticle8').val()) * 100) / 100) + (Math.round((priceRefct003 * $('#nbArticle9').val()) * 100) / 100));
         } else {
